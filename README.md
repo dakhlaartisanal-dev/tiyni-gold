@@ -1,2 +1,3 @@
-# tiyni-gold
-Tiyni Gold — Dattes de Figuig
+# Tiyni Gold — Dattes de Figuig
+Landing page de réservation : Aziza, Assiane & Majhoul (FR / عربية / EN / ES).
+Déployé sur Vercel.

@@ -381,7 +381,8 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 </style>
 </head>
 
-<body class="product-page">
+
+<body>
 <nav>
   <a class="logo" href="index.html">Tiyni <b>Gold</b></a>
   <div class="nav-links">
@@ -397,124 +398,36 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
     <button data-lang="es">ES</button>
   </div>
 </nav>
-
-
-
-<section class="products-sec" style="padding-top:40px">
-  <div class="grid" style="max-width:640px;margin:0 auto">
-<!-- AZIZA — RÉSERVATION -->
-    <div class="card card-aziza reveal">
-      <div class="card-img"><img src="images/aziza.jpg" alt="Dattes Aziza première qualité"></div>
-      <div class="card-body">
-        <span class="flash-resa" data-i18n="az_flash">⚡ RÉSERVATION OUVERTE</span>
-        <h3 data-i18n="az_title">Dattes Aziza</h3>
-        <div class="resa-note" data-i18n-html="az_note">📅 <b>Récolte : fin septembre.</b> Traitement spécial et quantité très limitée. <b>90% de la récolte est déjà réservée</b> par nos clients fidèles chaque année. Réservez dès maintenant pour ne rien manquer — surtout la première qualité.</div>
-        <div class="tier-row">
-          <div class="tier-name"><span data-i18n="az_t1">1ère qualité</span><small data-i18n="az_t1s">La plus rare, grain par grain</small></div>
-        </div>
-        <div class="tier-row">
-          <div class="tier-name"><span data-i18n="az_t2">2ème qualité premium</span><small data-i18n="az_t2s">La même datte d'exception</small></div>
-        </div>
-        <div class="calc" data-base="249" data-bulk="249" data-currency="DH">
-          <div class="calc-row" style="margin-bottom:14px">
-            <button type="button" class="qty-btn qual-btn active" data-rate="249" data-i18n="az_q1">1ère qualité</button>
-            <button type="button" class="qty-btn qual-btn" data-rate="179" data-i18n="az_q2">2ème premium</button>
-          </div>
-          <div class="calc-label" data-i18n="calc_label_az">Quantité :</div>
-          <div class="calc-row">
-            <button type="button" class="qty-btn active" data-q="2">2 kg<br><span class="qp">498 DH</span></button>
-            <button type="button" class="qty-btn" data-q="4">4 kg<br><span class="qp">996 DH</span></button>
-            <button type="button" class="qty-btn" data-q="6">6 kg<br><span class="qp">1494 DH</span></button>
-            <button type="button" class="qty-btn" data-q="8">8 kg<br><span class="qp">1992 DH</span></button>
-            <button type="button" class="qty-btn" data-q="10">10 kg<br><span class="qp">2490 DH</span></button>
-          </div>
-          <div class="calc-total">
-            <span class="t-label" data-i18n="calc_total_az">Total :</span>
-            <span class="t-price">299 DH</span>
-            <span class="calc-save" hidden></span>
-          </div>
-        </div>
-        <a href="#order" class="btn btn-resa btn-sm" style="margin-top:16px" data-i18n="az_btn">🔥 Réserver ma commande</a>
+<section class="order-sec" style="min-height:70vh;display:flex;align-items:center">
+  <div class="order-wrap" style="text-align:center">
+    <div class="thanks-icon" style="font-size:3rem">🌴✅</div>
+    <h2 id="thanksTitle"></h2>
+    <p class="thanks-order" id="thanksOrder"></p>
+    <p class="thanks-total" id="thanksTotal"></p>
+    <p class="thanks-msg" id="thanksMsg"></p>
+    <div id="upsellZone" hidden style="margin-top:28px;padding:24px;background:linear-gradient(160deg,#1a1408,#0d0a07);border:1px solid #c9a227;border-radius:18px">
+      <img src="images/aziza.jpg" alt="Aziza" style="width:100%;max-width:300px;border-radius:12px;margin-bottom:14px">
+      <h3 id="upT" style="color:#d4af37;margin:0 0 8px"></h3>
+      <p id="upP" style="opacity:.85;margin:0 0 16px"></p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a id="upB1" class="btn btn-sm" href="#">Aziza 1ère qualité</a>
+        <a id="upB2" class="btn btn-outline btn-sm" href="#">Aziza 2ème premium</a>
       </div>
-    </div>
-
-    
-  </div>
-</section>
-
-<section id="order" class="order-sec">
-  <div class="order-wrap reveal">
-    <h2 data-i18n="form_title">Réservez en 30 secondes</h2>
-    <p class="sub" data-i18n-html="form_sub">Remplissez vos informations, on vous appelle pour confirmer. <b>Paiement à la livraison.</b></p>
-    <form id="orderForm">
-      <div class="field">
-        <label for="name" data-i18n="f_name">Nom complet</label>
-        <input type="text" id="name" data-i18n-ph="f_name_ph" placeholder="Ex : Youssef Alaoui" required>
-      </div>
-      <div class="field">
-        <label for="phone" data-i18n="f_phone">Numéro de téléphone</label>
-        <input type="tel" id="phone" placeholder="06 XX XX XX XX" required>
-      </div>
-      <div class="row2">
-        <div class="field">
-          <label for="product" data-i18n="f_product">Produit</label>
-          <select id="product">
-            <option data-i18n="opt1" selected data-base="249" data-bulk="249">Aziza 1ère qualité</option>
-            <option data-i18n="opt2" data-base="179" data-bulk="179">Aziza 2ème qualité premium</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="qty" data-i18n="f_qty">Quantité</label>
-          <select id="qty">
-            <option value="2">2 kg</option><option value="4">4 kg</option>
-            <option value="6">6 kg</option><option value="8">8 kg</option><option value="10">10 kg</option>
-          </select>
-        </div>
-      </div>
-      <div class="field">
-        <label for="city" data-i18n="f_city">Ville</label>
-        <input type="text" id="city" data-i18n-ph="f_city_ph" placeholder="Ex : Casablanca">
-      </div>
-      <div class="total-box" id="totalBox">
-        <span class="total-label" data-i18n="f_total">Total à payer :</span>
-        <span class="total-value" id="totalValue">299 DH</span>
-        <span class="total-detail" id="totalDetail">1 kg × 299 DH/kg</span>
-        <span class="total-save" id="totalSave" hidden></span>
-        <span class="total-deliv" data-i18n="f_deliv">🚚 Livraison gratuite dès 2 kg, partout au Maroc</span>
-      </div>
-      <button type="submit" class="btn order-btn" data-i18n="f_submit">✅ Confirmer — Paiement à la livraison</button>
-      <p class="cod-note" data-i18n="f_note">🚚 Livraison gratuite dès 2 kg • On vous appelle avant l'envoi</p>
-    </form>
-    <div class="thanks-box" id="thanksBox" hidden>
-      <div class="thanks-icon">🌴✅</div>
-      <h3 id="thanksTitle"></h3>
-      <p class="thanks-order" id="thanksOrder"></p>
-      <p class="thanks-total" id="thanksTotal"></p>
-      <p class="thanks-msg" id="thanksMsg"></p>
     </div>
   </div>
 </section>
-
 <footer>
   <a class="logo" href="#">Tiyni <b>Gold</b></a>
   <p data-i18n="footer_p1">Dattes authentiques des oasis de Figuig 🇲🇦 — de l'oasis à votre porte</p>
   <p style="margin-top:8px" data-i18n="footer_p2">© 2026 Tiyni Gold — Tous droits réservés</p>
 </footer>
-
-
 <a class="wa-float" href="https://wa.me/212613043469" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.9 7.5.9 15.9c0 2.7.7 5.3 2 7.6L.8 32l8.7-2.1c2.2 1.2 4.7 1.9 7.2 1.9 8.4 0 15.1-6.7 15.1-15.1S24.4.8 16 .8zm0 27.6c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-5.2 1.3 1.3-5-.3-.5c-1.2-1.9-1.9-4.1-1.9-6.4C3 9.1 8.9 3.2 16 3.2S29 9.1 29 15.9 23.1 28.4 16 28.4zm8.3-9.4c-.5-.2-2.7-1.3-3.1-1.5-.4-.1-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-.5-.2-1.9-.7-3.7-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1l.7-.8c.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8-.1-.2-1-2.4-1.4-3.3-.4-.9-.7-.7-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.2.3 3.2 4.9 7.8 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2.1.3 2.9.2.9-.1 2.7-1.1 3.1-2.2.4-1.1.4-2 .3-2.2-.1-.2-.5-.3-1-.6z"/></svg>
 </a>
 
 
-<script>
-// Pré-remplissage depuis merci.html (upsell Aziza)
-const pq=new URLSearchParams(location.search);
-if(pq.get('n')){document.getElementById('name').value=pq.get('n');}
-if(pq.get('ph')){document.getElementById('phone').value=pq.get('ph');}
-if(pq.get('c')){document.getElementById('city').value=pq.get('c');}
-if(pq.get('opt')==='2'){document.getElementById('product').selectedIndex=1;}
 
+<script>
 const T = {
 fr:{
   topbar:"🚚 Livraison gratuite dès 2 kg — Paiement à la livraison",
@@ -893,106 +806,26 @@ es:{
   th_msg_other:"Tu reserva ha sido recibida. Incha'Allah, en cuanto empiece la cosecha (desde el 15 de septiembre), te llamaremos para confirmar juntos la cantidad exacta. Y si también quieres reservar Aziza, dínoslo en la llamada — te guardaremos tu parte, incha'Allah. 🌴"
 }
 };
-
-let curLang='fr';
-function setLang(l){
-  curLang=l;
-  const d=T[l];
-  document.documentElement.lang=l;
-  document.documentElement.dir=(l==='ar')?'rtl':'ltr';
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.dataset.i18n;
-    if(d[k]!==undefined)el.textContent=d[k];
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
-    const k=el.dataset.i18nHtml;
-    if(d[k]!==undefined)el.innerHTML=d[k];
-  });
-  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
-    const k=el.dataset.i18nPh;
-    if(d[k]!==undefined)el.placeholder=d[k];
-  });
-  document.querySelectorAll('.lang-switch button').forEach(b=>{
-    b.classList.toggle('active',b.dataset.lang===l);
-  });
+const L=T[localStorage.getItem('tg-lang')||'fr'];
+const q=new URLSearchParams(location.search);
+const prod=q.get('p')||'';
+const qty=q.get('q')||'2';
+const total=q.get('t')||'';
+document.getElementById('thanksTitle').textContent=L.th_title||'Réservation confirmée';
+document.getElementById('thanksOrder').textContent=prod+' — '+qty+' kg';
+document.getElementById('thanksTotal').textContent=(L.th_total||'Total : {total}').replace('{total}',total);
+const isAz=/aziza|أزيزا/i.test(prod);
+document.getElementById('thanksMsg').textContent=isAz?(L.th_msg_az||''):(L.th_msg_other||'');
+if(!isAz){
+  document.getElementById('upsellZone').hidden=false;
+  document.getElementById('upT').textContent=L.up_t||'';
+  document.getElementById('upP').textContent=L.up_p||'';
+  const name=q.get('n')||'',phone=q.get('ph')||'',city=q.get('c')||'';
+  document.getElementById('upB1').textContent=L.up_b1||'Aziza 1ère qualité';
+  document.getElementById('upB2').textContent=L.up_b2||'Aziza 2ème premium';
+  document.getElementById('upB1').href='aziza.html?n='+encodeURIComponent(name)+'&ph='+encodeURIComponent(phone)+'&c='+encodeURIComponent(city)+'&opt=1';
+  document.getElementById('upB2').href='aziza.html?n='+encodeURIComponent(name)+'&ph='+encodeURIComponent(phone)+'&c='+encodeURIComponent(city)+'&opt=2';
 }
-document.querySelectorAll('.lang-switch button').forEach(b=>{
-  b.addEventListener('click',()=>setLang(b.dataset.lang));
-});
-
-// Reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}
-}),{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Quantity calculators
-document.querySelectorAll('.calc').forEach(calc=>{
-  const base=parseFloat(calc.dataset.base);
-  const bulk=parseFloat(calc.dataset.bulk);
-  const cur=calc.dataset.currency||'DH';
-  const priceEl=calc.querySelector('.t-price');
-  const saveEl=calc.querySelector('.calc-save');
-  const totalBox=calc.querySelector('.calc-total');
-  const btns=calc.querySelectorAll('.qty-btn[data-q]');
-  const qualBtns=calc.querySelectorAll('.qual-btn');
-  let qty=2;
-  let rate=base;
-  function render(){
-    const total=rate*qty;
-    priceEl.textContent=total+' '+cur;
-    saveEl.hidden=true;
-    btns.forEach(b=>{
-      b.classList.toggle('active',parseInt(b.dataset.q)===qty);
-      const qp=b.querySelector('.qp');
-      if(qp)qp.textContent=(rate*parseInt(b.dataset.q))+' '+cur;
-    });
-    qualBtns.forEach(b=>b.classList.toggle('active',parseFloat(b.dataset.rate)===rate));
-  }
-  btns.forEach(b=>b.addEventListener('click',()=>{
-    qty=parseInt(b.dataset.q);
-    render();
-  }));
-  qualBtns.forEach(b=>b.addEventListener('click',()=>{
-    rate=parseFloat(b.dataset.rate);
-    render();
-  }));
-  render();
-});
-
-// Live total in order form
-const prodSel=document.getElementById('product'),qtySel=document.getElementById('qty'),
-      totalValueEl=document.getElementById('totalValue'),totalSaveEl=document.getElementById('totalSave');
-function orderTotal(){
-  const o=prodSel.options[prodSel.selectedIndex];
-  const base=parseFloat(o.dataset.base),bulk=parseFloat(o.dataset.bulk),qty=parseInt(qtySel.value);
-  const rate=(bulk<base&&qty>=2)?bulk:base;
-  return {total:rate*qty,saved:(base*qty)-(rate*qty),qty,rate};
-}
-function renderTotal(){
-  const t=orderTotal();
-  totalValueEl.textContent=t.total+' DH';
-  document.getElementById('totalDetail').textContent=(T[curLang].f_detail||'{qty} kg × {rate} DH/kg').replace('{qty}',t.qty).replace('{rate}',t.rate);
-  totalSaveEl.hidden=true;
-}
-prodSel.addEventListener('change',renderTotal);
-qtySel.addEventListener('change',renderTotal);
-renderTotal();
-
-// Order submit → thank-you page
-document.getElementById('orderForm').addEventListener('submit',e=>{
-  e.preventDefault();
-  const prodName=document.getElementById('product').selectedOptions[0].textContent;
-  const name=document.getElementById('name').value;
-  const phone=document.getElementById('phone').value;
-  const city=document.getElementById('city').value;
-  const qty=document.getElementById('qty').value;
-  const total=document.getElementById('totalValue').textContent;
-  const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
-  window.location.href='merci.html?'+params.toString();
-});
-});
 </script>
 </body>
 </html>
-

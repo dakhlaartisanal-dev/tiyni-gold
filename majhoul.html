@@ -493,14 +493,6 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
       <p class="thanks-total" id="thanksTotal"></p>
       <p class="thanks-msg" id="thanksMsg"></p>
     </div>
-    <div class="upsell reveal" id="upsellAziza" hidden>
-      <img src="images/aziza.jpg" alt="Dattes Aziza">
-      <h3 data-i18n="up_t">Et si vous ajoutiez Aziza ?</h3>
-      <p data-i18n="up_p">La datte la plus rare du Maroc — récolte fin septembre. 90% déjà réservé.</p>
-      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <a href="aziza.html" class="btn btn-sm" data-i18n="up_b1">Aziza 1ère qualité</a>
-        <a href="aziza.html" class="btn btn-outline btn-sm" data-i18n="up_b2">Aziza 2ème premium</a>
-      </div>
     </div>
   </div>
 </section>
@@ -989,22 +981,15 @@ renderTotal();
 // Order submit → thank-you page
 document.getElementById('orderForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const n=document.getElementById('name').value.trim();
-  const t=orderTotal();
-  const prodName=prodSel.options[prodSel.selectedIndex].textContent.split('—')[0].trim();
-  const L=T[curLang];
-  const isAz=/aziza|أزيزا/i.test(prodName);
-  const msg=isAz?L.th_msg_az:L.th_msg_other;
-  document.getElementById('thanksTitle').textContent=L.th_title.replace('{name}',n||'');
-  document.getElementById('thanksOrder').textContent=L.th_order.replace('{product}',prodName).replace('{qty}',t.qty);
-  document.getElementById('thanksTotal').textContent=L.th_total.replace('{total}',t.total);
-  document.getElementById('thanksMsg').textContent=msg;
-  document.getElementById('orderForm').hidden=true;
-  const tb=document.getElementById('thanksBox');
-  tb.hidden=false;
-  const up=document.getElementById('upsellAziza');
-  if(up){up.hidden=false;}
-  tb.scrollIntoView({behavior:'smooth',block:'center'});
+  const prodName=document.getElementById('product').selectedOptions[0].textContent;
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const city=document.getElementById('city').value;
+  const qty=document.getElementById('qty').value;
+  const total=document.getElementById('totalValue').textContent;
+  const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
+  window.location.href='merci.html?'+params.toString();
+});
 });
 </script>
 </body>

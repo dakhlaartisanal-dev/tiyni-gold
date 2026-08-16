@@ -378,6 +378,12 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
   .order-wrap{padding:32px 22px}
   .row2{grid-template-columns:1fr}
 }
+
+.upsell{margin-top:24px;padding:24px;background:linear-gradient(160deg,#1a1408,#0d0a07);border:1px solid #c9a227;border-radius:18px;text-align:center}
+.upsell img{width:100%;max-width:280px;border-radius:12px;margin-bottom:14px}
+.upsell h3{color:#d4af37;margin:0 0 8px;font-size:1.15rem}
+.upsell p{opacity:.85;margin:0 0 16px;font-size:.95rem}
+
 </style>
 </head>
 
@@ -449,11 +455,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <div class="field">
           <label for="product" data-i18n="f_product">Produit</label>
           <select id="product">
-            <option data-i18n="opt1" data-base="249" data-bulk="249">Aziza 1ère qualité 🌴 Réservation — récolte fin sept.</option>
-            <option data-i18n="opt2" data-base="179" data-bulk="179">Aziza 2ème qualité premium 🌴 Réservation — récolte fin sept.</option>
-            <option data-i18n="opt4" selected data-base="89" data-bulk="84">Assiane 🌴 Réservation — récolte dès le 15 sept.</option>
-            <option data-i18n="opt5" data-base="79" data-bulk="74">Majhoul standard 🌴 Réservation — récolte dès le 15 sept.</option>
-            <option data-i18n="opt6" data-base="150" data-bulk="140">Majhoul Premium grand calibre 🌴 Réservation — récolte dès le 15 sept.</option>
+            <option data-i18n="opt4" selected data-base="89" data-bulk="84">Assiane</option>
           </select>
         </div>
         <div class="field">
@@ -485,6 +487,15 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
       <p class="thanks-total" id="thanksTotal"></p>
       <p class="thanks-msg" id="thanksMsg"></p>
     </div>
+    <div class="upsell reveal" id="upsellAziza" hidden>
+      <img src="images/aziza.jpg" alt="Dattes Aziza">
+      <h3 data-i18n="up_t">Et si vous ajoutiez Aziza ?</h3>
+      <p data-i18n="up_p">La datte la plus rare du Maroc — récolte fin septembre. 90% déjà réservé.</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <a href="aziza.html" class="btn btn-sm" data-i18n="up_b1">Aziza 1ère qualité</a>
+        <a href="aziza.html" class="btn btn-outline btn-sm" data-i18n="up_b2">Aziza 2ème premium</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -503,6 +514,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 <script>
 const T = {
 fr:{
+  up_t:"Et si vous ajoutiez Aziza ?",up_p:"La datte la plus rare du Maroc — récolte fin septembre. 90% déjà réservé.",up_b1:"Aziza 1ère qualité",up_b2:"Aziza 2ème premium",
   topbar:"🚚 Livraison gratuite dès 2 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -575,14 +587,14 @@ fr:{
   form_sub:"Remplissez vos informations, on vous appelle pour confirmer. <b>Paiement à la livraison.</b>",
   f_name:"Nom complet",f_name_ph:"Ex : Youssef Alaoui",
   f_phone:"Numéro de téléphone",f_product:"Produit",
-  opt1:"Aziza 1ère qualité 🌴 Réservation — récolte fin sept.",
+  opt1:"Aziza 1ère qualité",
   f_detail:"{qty} kg × {rate} DH/kg",
   f_deliv:"🚚 Livraison gratuite dès 2 kg, partout au Maroc",
-  opt2:"Aziza 2ème qualité premium 🌴 Réservation — récolte fin sept.",
+  opt2:"Aziza 2ème qualité premium",
   opt3:"Boufeggous — 79 DH/kg",
-  opt4:"Assiane 🌴 Réservation — récolte dès le 15 sept.",
-  opt5:"Majhoul standard 🌴 Réservation — récolte dès le 15 sept.",
-  opt6:"Majhoul Premium grand calibre 🌴 Réservation — récolte dès le 15 sept.",
+  opt4:"Assiane",
+  opt5:"Majhoul standard",
+  opt6:"Majhoul Premium grand calibre",
   f_qty:"Quantité",f_city:"Ville",f_city_ph:"Ex : Casablanca",
   f_submit:"✅ Confirmer — Paiement à la livraison",
   f_note:"🚚 Livraison gratuite dès 2 kg • On vous appelle avant l'envoi",
@@ -597,6 +609,7 @@ fr:{
   th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (à partir du 15 septembre), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
 },
 ar:{
+  up_t:"وزيدو أزيزا مع طلبيتكم؟",up_p:"أندر تمرة في المغرب — الحصاد نهاية شتنبر. 90% محجوزة.",up_b1:"أزيزا — الجودة الأولى",up_b2:"أزيزا — بريميوم",
   topbar:"🚚 التوصيل مجاني ابتداءً من 2 كغ — الدفع عند الاستلام",
   nav_figuig:"فيجيج",nav_products:"تمورنا",nav_why:"لماذا أزيزا؟",nav_order:"احجز أزيزا",
   hero_badge:"✦ من واحات فيجيج مباشرة",
@@ -669,14 +682,14 @@ ar:{
   form_sub:"املأ معلوماتك وسنتصل بك للتأكيد. <b>الدفع عند الاستلام.</b>",
   f_name:"الاسم الكامل",f_name_ph:"مثال: يوسف العلوي",
   f_phone:"رقم الهاتف",f_product:"المنتج",
-  opt1:"أزيزا الجودة الأولى 🌴 حجز — الحصاد نهاية شتنبر",
+  opt1:"أزيزا — الجودة الأولى",
   f_detail:"{qty} كغ × {rate} درهم/كغ",
   f_deliv:"🚚 التوصيل مجاني ابتداءً من 2 كغ، في جميع أنحاء المغرب",
-  opt2:"أزيزا الجودة الثانية بريميوم 🌴 حجز — الحصاد نهاية شتنبر",
+  opt2:"أزيزا — الجودة الثانية بريميوم",
   opt3:"بوفكوس — 79 درهم/كيلو",
-  opt4:"العصيان 🌴 حجز — الحصاد ابتداءً من 15 شتنبر",
-  opt5:"مجهول ستاندار 🌴 حجز — الحصاد ابتداءً من 15 شتنبر",
-  opt6:"مجهول بريميوم حجم كبير 🌴 حجز — الحصاد ابتداءً من 15 شتنبر",
+  opt4:"العصيان",
+  opt5:"مجهول ستاندار",
+  opt6:"مجهول بريميوم حجم كبير",
   f_qty:"الكمية",f_city:"المدينة",f_city_ph:"مثال: الدار البيضاء",
   f_submit:"✅ أكّد — الدفع عند الاستلام",
   f_note:"🚚 التوصيل مجاني ابتداءً من 2 كغ • نتصل بك قبل الإرسال",
@@ -691,6 +704,7 @@ ar:{
   th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
 },
 en:{
+  up_t:"Why not add Aziza?",up_p:"The rarest date in Morocco — harvest late September. 90% already reserved.",up_b1:"Aziza 1st quality",up_b2:"Aziza 2nd premium",
   topbar:"🚚 Free delivery from 2 kg — Cash on delivery",
   nav_figuig:"Figuig",nav_products:"Our dates",nav_why:"Why Aziza?",nav_order:"Reserve Aziza",
   hero_badge:"✦ Straight from the Figuig oases",
@@ -763,14 +777,14 @@ en:{
   form_sub:"Fill in your details and we'll call you to confirm. <b>Cash on delivery.</b>",
   f_name:"Full name",f_name_ph:"E.g. Youssef Alaoui",
   f_phone:"Phone number",f_product:"Product",
-  opt1:"Aziza 1st quality 🌴 Reservation — harvest end of Sept.",
+  opt1:"Aziza 1st quality",
   f_detail:"{qty} kg × {rate} MAD/kg",
   f_deliv:"🚚 Free delivery from 2 kg, everywhere in Morocco",
-  opt2:"Aziza 2nd quality premium 🌴 Reservation — harvest end of Sept.",
+  opt2:"Aziza 2nd quality premium",
   opt3:"Boufeggous — 79 MAD/kg",
-  opt4:"Assiane 🌴 Reservation — harvest from Sept 15",
-  opt5:"Majhoul standard 🌴 Reservation — harvest from Sept 15",
-  opt6:"Majhoul Premium grand calibre 🌴 Reservation — harvest from Sept 15",
+  opt4:"Assiane",
+  opt5:"Majhoul standard",
+  opt6:"Majhoul Premium grand calibre",
   f_qty:"Quantity",f_city:"City",f_city_ph:"E.g. Casablanca",
   f_submit:"✅ Confirm — Cash on delivery",
   f_note:"🚚 Free delivery from 2 kg • We call you before shipping",
@@ -785,6 +799,7 @@ en:{
   th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
 },
 es:{
+  up_t:"¿Y si añades Aziza?",up_p:"El dátil más raro de Marruecos — cosecha fin de septiembre. 90% ya reservado.",up_b1:"Aziza 1ª calidad",up_b2:"Aziza 2ª premium",
   topbar:"🚚 Entrega gratis desde 2 kg — Pago contra entrega",
   nav_figuig:"Figuig",nav_products:"Nuestros dátiles",nav_why:"¿Por qué Aziza?",nav_order:"Reservar Aziza",
   hero_badge:"✦ Directamente de los oasis de Figuig",
@@ -857,14 +872,14 @@ es:{
   form_sub:"Rellena tus datos y te llamamos para confirmar. <b>Pago contra entrega.</b>",
   f_name:"Nombre completo",f_name_ph:"Ej.: Youssef Alaoui",
   f_phone:"Número de teléfono",f_product:"Producto",
-  opt1:"Aziza 1ª calidad 🌴 Reserva — cosecha finales de sept.",
+  opt1:"Aziza 1ª calidad",
   f_detail:"{qty} kg × {rate} MAD/kg",
   f_deliv:"🚚 Entrega gratis desde 2 kg, en todo Marruecos",
-  opt2:"Aziza 2ª calidad premium 🌴 Reserva — cosecha finales de sept.",
+  opt2:"Aziza 2ª calidad premium",
   opt3:"Boufeggous — 79 MAD/kg",
-  opt4:"Assiane 🌴 Reserva — cosecha desde el 15 sept.",
-  opt5:"Majhoul estándar 🌴 Reserva — cosecha desde el 15 sept.",
-  opt6:"Majhoul Premium gran calibre 🌴 Reserva — cosecha desde el 15 sept.",
+  opt4:"Assiane",
+  opt5:"Majhoul estándar",
+  opt6:"Majhoul Premium gran calibre",
   f_qty:"Cantidad",f_city:"Ciudad",f_city_ph:"Ej.: Casablanca",
   f_submit:"✅ Confirmar — Pago contra entrega",
   f_note:"🚚 Entrega gratis desde 2 kg • Te llamamos antes del envío",
@@ -981,6 +996,8 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   document.getElementById('orderForm').hidden=true;
   const tb=document.getElementById('thanksBox');
   tb.hidden=false;
+  const up=document.getElementById('upsellAziza');
+  if(up){up.hidden=false;}
   tb.scrollIntoView({behavior:'smooth',block:'center'});
 });
 </script>

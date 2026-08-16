@@ -378,6 +378,15 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
   .order-wrap{padding:32px 22px}
   .row2{grid-template-columns:1fr}
 }
+
+.trust-sec{padding:60px 20px;max-width:1100px;margin:0 auto}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:30px}
+.trust-card{background:linear-gradient(160deg,#1a1408,#0d0a07);border:1px solid rgba(201,162,39,.25);border-radius:18px;padding:28px 24px}
+.trust-ico{font-size:2rem;margin-bottom:12px}
+.trust-card h3{color:#d4af37;font-size:1.1rem;margin:0 0 10px}
+.trust-card p{color:var(--muted);font-size:.93rem;line-height:1.6;margin:0}
+.trust-sig{text-align:center;margin-top:34px;font-style:italic;color:var(--muted);opacity:.8;font-size:.95rem}
+
 </style>
 </head>
 <body>
@@ -542,6 +551,22 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
   </div>
 </section>
 
+<!-- POURQUOI NOUS — CONFIANCE -->
+<section class="trust-sec">
+  <div class="section-head reveal">
+    <div class="kicker" data-i18n="trust_kicker">✦ Pourquoi Tiyni Gold</div>
+    <h2 data-i18n="trust_title">Parce que nous sommes les producteurs, pas des revendeurs</h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card reveal"><div class="trust-ico">🌴</div><h3 data-i18n="t1_t">Nos propres palmeraies</h3><p data-i18n="t1_p">Tout ce que nous vendons vient de nos jardins, à Figuig. Nous sommes Figuiguais, de père en fils — pas des intermédiaires.</p></div>
+    <div class="trust-card reveal"><div class="trust-ico">🤝</div><h3 data-i18n="t2_t">Une confiance de longue date</h3><p data-i18n="t2_p">Notre notoriété parle depuis des années — et nos clients ne nous quittent jamais. C'est ça, la vraie preuve.</p></div>
+    <div class="trust-card reveal"><div class="trust-ico">🧊</div><h3 data-i18n="t3_t">Fraîcheur garantie</h3><p data-i18n="t3_p">Nos dattes ne passent jamais au frigo avant d'arriver chez vous. Une fois reçues, mettez-les au froid : elles restent fraîches, même goût, même texture, même couleur — rien ne change.</p></div>
+    <div class="trust-card reveal"><div class="trust-ico">📦</div><h3 data-i18n="t4_t">Direct de l'oasis à votre porte</h3><p data-i18n="t4_p">Pas de stockage, pas de transit intermédiaire. Nous récoltons, nous emballons, nous vous livrons — c'est tout.</p></div>
+  </div>
+  <p class="trust-sig reveal" data-i18n="trust_sig">— Tiyni Gold, Figuig. De père en fils, au service de la vraie datte.</p>
+</section>
+
+
 <!-- CTA BANNER -->
 <section class="cta-banner">
   <div class="cta-inner reveal">
@@ -568,6 +593,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 <script>
 const T = {
 fr:{
+  trust_kicker:"✦ Pourquoi Tiyni Gold",trust_title:"Parce que nous sommes les producteurs, pas des revendeurs",t1_t:"Nos propres palmeraies",t1_p:"Tout ce que nous vendons vient de nos jardins, à Figuig. Nous sommes Figuiguais, de père en fils — pas des intermédiaires.",t2_t:"Une confiance de longue date",t2_p:"Notre notoriété parle depuis des années — et nos clients ne nous quittent jamais. C'est ça, la vraie preuve.",t3_t:"Fraîcheur garantie",t3_p:"Nos dattes ne passent jamais au frigo avant d'arriver chez vous. Une fois reçues, mettez-les au froid : elles restent fraîches, même goût, même texture, même couleur — rien ne change.",t4_t:"Direct de l'oasis à votre porte",t4_p:"Pas de stockage, pas de transit intermédiaire. Nous récoltons, nous emballons, nous vous livrons — c'est tout.",trust_sig:"— Tiyni Gold, Figuig. De père en fils, au service de la vraie datte.",
   as_flash:"🔥 RÉCOLTE DÈS LE 15 SEPTEMBRE",as_title:"Dattes Assiane",as_teaser:"La première de la saison — fondante, douce, fraîche de l'oasis.",as_btn:"🔥 Réserver",
   az_flash2:"⚡ RÉCOLTE FIN SEPTEMBRE — 90% DÉJÀ RÉSERVÉ",az_title2:"Dattes Aziza",az_teaser:"La datte la plus rare et la plus chère du Maroc — et elle le vaut.",az_btn2:"🔥 Réserver",
   mj_flash:"🔥 RÉCOLTE DÈS LE 15 SEPTEMBRE",mj_title2:"Dattes Majhoul",mj_teaser:"La reine des dattes — charnue, généreuse, inoubliable.",mj_btn2:"🔥 Réserver",
@@ -664,6 +690,7 @@ fr:{
   th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (à partir du 15 septembre), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
 },
 ar:{
+  trust_kicker:"✦ علاش Tiyni Gold",trust_title:"حيت حنا المنتجين، ماشي غير بائعين",t1_t:"النخيل ديالنا",t1_p:"كلشي لي كنبيعو كيجي من جناناتنا ففجيج. حنا فجيجيين، من الأب للجد — ماشي وسطاء.",t2_t:"ثقة منذ سنوات",t2_p:"سمعتنا كتتكلم منذ سنين — وزبنائنا ما كيبدلوناش أبداً. هادشي هو الدليل الحقيقي.",t3_t:"الطزاجة مضمونة",t3_p:"تمورنا ما كتدخلش للثلاجة قبل ما توصل ليك. ملي توصلك، ديرها فالفريجي: كتبقى طازجة، نفس المذاق، نفس القوام، نفس اللون — والو ما كيتبدل.",t4_t:"من الواحة لباب دارك",t4_p:"بلا تخزين، بلا وسطاء. كنقطفو، كنغلفو، كنوصلو ليك — سالينا.",trust_sig:"— Tiyni Gold، فجيج. من الأب للجد، فخدمة التمرة الحقيقية.",
   as_flash:"🔥 الحصاد من 15 شتنبر",as_title:"تمور العصيان",as_teaser:"الأولى في الموسم — ذائبة، حلوة، طازجة من الواحة.",as_btn:"🔥 احجز الآن",
   az_flash2:"⚡ الحصاد آخر شتنبر — 90% محجوزة",az_title2:"تمور أزيزا",az_teaser:"أندر وأغلى تمرة في المغرب — وتستاهل ثمنها.",az_btn2:"🔥 احجز الآن",
   mj_flash:"🔥 الحصاد من 15 شتنبر",mj_title2:"تمور مجهول",mj_teaser:"ملكة التمور — لحمية، سخية، لا تُنسى.",mj_btn2:"🔥 احجز الآن",
@@ -760,6 +787,7 @@ ar:{
   th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
 },
 en:{
+  trust_kicker:"✦ Why Tiyni Gold",trust_title:"Because we are the growers, not resellers",t1_t:"Our own palm groves",t1_p:"Everything we sell comes from our own gardens in Figuig. We are Figuigui, father to son — not middlemen.",t2_t:"Trusted for years",t2_p:"Our reputation speaks for years — and our customers never leave us. That is the real proof.",t3_t:"Freshness guaranteed",t3_p:"Our dates never go in the fridge before reaching you. Once received, put them in the cold: they stay fresh — same taste, same texture, same colour. Nothing changes.",t4_t:"From the oasis straight to your door",t4_p:"No storage, no middlemen. We harvest, we pack, we deliver — that is all.",trust_sig:"— Tiyni Gold, Figuig. Father to son, serving the real date.",
   as_flash:"🔥 HARVEST FROM SEPTEMBER 15",as_title:"Assiane Dates",as_teaser:"First of the season — melt-in-your-mouth, sweet, fresh from the oasis.",as_btn:"🔥 Reserve",
   az_flash2:"⚡ HARVEST LATE SEPTEMBER — 90% ALREADY RESERVED",az_title2:"Aziza Dates",az_teaser:"The rarest and most precious date in Morocco — and worth it.",az_btn2:"🔥 Reserve",
   mj_flash:"🔥 HARVEST FROM SEPTEMBER 15",mj_title2:"Majhoul Dates",mj_teaser:"The queen of dates — fleshy, generous, unforgettable.",mj_btn2:"🔥 Reserve",
@@ -856,6 +884,7 @@ en:{
   th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
 },
 es:{
+  trust_kicker:"✦ Por qué Tiyni Gold",trust_title:"Porque somos los productores, no revendedores",t1_t:"Nuestros propios palmerales",t1_p:"Todo lo que vendemos viene de nuestros jardines en Figuig. Somos de Figuig, de padre a hijo — no intermediarios.",t2_t:"Confianza desde hace años",t2_p:"Nuestra reputación habla desde hace años — y nuestros clientes nunca nos dejan. Esa es la verdadera prueba.",t3_t:"Frescura garantizada",t3_p:"Nuestros dátiles nunca pasan por la nevera antes de llegar a ti. Una vez recibidos, métalos al frío: siguen frescos — mismo sabor, misma textura, mismo color. Nada cambia.",t4_t:"Del oasis a tu puerta",t4_p:"Sin almacenamiento, sin intermediarios. Cosechamos, envasamos, entregamos — y ya.",trust_sig:"— Tiyni Gold, Figuig. De padre a hijo, al servicio del dátil auténtico.",
   as_flash:"🔥 COSECHA DESDE EL 15 DE SEPTIEMBRE",as_title:"Dátiles Assiane",as_teaser:"La primera de la temporada — tierna, dulce, fresca del oasis.",as_btn:"🔥 Reservar",
   az_flash2:"⚡ COSECHA FIN DE SEPTIEMBRE — 90% YA RESERVADO",az_title2:"Dátiles Aziza",az_teaser:"El dátil más raro y preciado de Marruecos — y lo vale.",az_btn2:"🔥 Reservar",
   mj_flash:"🔥 COSECHA DESDE EL 15 DE SEPTIEMBRE",mj_title2:"Dátiles Majhoul",mj_teaser:"La reina de los dátiles — carnosa, generosa, inolvidable.",mj_btn2:"🔥 Reservar",

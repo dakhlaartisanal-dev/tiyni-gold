@@ -967,6 +967,11 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const qty=document.getElementById('qty').value;
   const total=document.getElementById('totalValue').textContent;
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
+  fetch('https://script.google.com/macros/s/AKfycbz0j3-PM99egGvFLAaQXJwkV2T6dxl6OKOniSvzaqmtqVC9pGBCC3OYzSthzZHZrYsH/exec',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:name,phone:phone,city:city,product:prodName,qty:qty,total:total})
+  }).catch(()=>{});
   window.location.href='merci.html?'+params.toString();
 });
 </script>

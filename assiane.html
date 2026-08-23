@@ -967,12 +967,14 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const qty=document.getElementById('qty').value;
   const total=document.getElementById('totalValue').textContent;
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
-  fetch('https://script.google.com/macros/s/AKfycbz0j3-PM99egGvFLAaQXJwkV2T6dxl6OKOniSvzaqmtqVC9pGBCC3OYzSthzZHZrYsH/exec',{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'text/plain;charset=utf-8'},
-    body:JSON.stringify({name:name,phone:phone,city:city,product:prodName,qty:qty,total:total})
-  }).catch(()=>{});
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbz0j3-PM99egGvFLAaQXJwkV2T6dxl6OKOniSvzaqmtqVC9pGBCC3OYzSthzZHZrYsH/exec';
+  let iframe=document.getElementById('sheetFrame');
+  if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
+  const f=document.createElement('form');
+  f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
+  const data={name:name,phone:phone,city:city,product:prodName,qty:qty,total:total};
+  for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
+  document.body.appendChild(f);f.submit();
   window.location.href='merci.html?'+params.toString();
 });
 </script>

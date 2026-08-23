@@ -969,7 +969,8 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
   fetch('https://script.google.com/macros/s/AKfycbz0j3-PM99egGvFLAaQXJwkV2T6dxl6OKOniSvzaqmtqVC9pGBCC3OYzSthzZHZrYsH/exec',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
     body:JSON.stringify({name:name,phone:phone,city:city,product:prodName,qty:qty,total:total})
   }).catch(()=>{});
   window.location.href='merci.html?'+params.toString();

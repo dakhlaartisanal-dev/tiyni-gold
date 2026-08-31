@@ -978,7 +978,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const data={name:name,phone:phone,city:city,product:prodName,qty:qty,total:total};
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
   document.body.appendChild(f);f.submit();
-  window.location.href='merci.html?'+params.toString();
+  setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);
 });
 </script>
 </body>

@@ -393,6 +393,15 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 .auth-box h2{margin:10px 0 22px}
 .auth-box p{color:#cfc6b4;line-height:1.9;font-size:1.08rem;margin:0 auto 16px;max-width:700px}
 .auth-punch{font-size:1.25rem!important;color:#E7C55B!important;font-weight:600;margin-top:26px!important}
+
+.mj-sec{padding:70px 20px;max-width:1100px;margin:0 auto}
+.mj-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0 26px}
+.mj-gallery img{width:100%;border-radius:16px;border:1px solid rgba(201,162,39,.35);display:block;transition:transform .35s ease}
+.mj-gallery img:hover{transform:scale(1.03)}
+.mj-cap{text-align:center;color:#8f8second;font-size:.95rem}
+.mj-note{text-align:center;color:#bfb49c;font-style:italic;max-width:640px;margin:0 auto 26px;line-height:1.8}
+.mj-btn{display:block;width:fit-content;margin:0 auto}
+@media(max-width:700px){.mj-gallery{grid-template-columns:1fr;max-width:340px;margin:30px auto 22px}}
 </style>
 </head>
 <body>
@@ -574,6 +583,23 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 
 
 
+
+<!-- MAJHOUL — SUR DEMANDE -->
+<section class="mj-sec">
+  <div class="section-head reveal">
+    <div class="kicker" data-i18n="mj_kicker">✦ Sur demande uniquement</div>
+    <h2 data-i18n="mj_sec_title">Majhoul — la reine des dattes</h2>
+    <p class="section-sub" data-i18n="mj_sec_sub">Charnue, généreuse, fondante — les photos parlent d'elles-mêmes : regardez le calibre sur l'arbre.</p>
+  </div>
+  <div class="mj-gallery reveal">
+    <img src="images/majhoul1.jpg" alt="Majhoul sur le palmier" loading="lazy">
+    <img src="images/majhoul2.jpg" alt="Calibre Majhoul" loading="lazy">
+    <img src="images/majhoul3.jpg" alt="Grappe Majhoul" loading="lazy">
+  </div>
+  <p class="mj-note reveal" data-i18n="mj_note">Le Majhoul ne se réserve pas en ligne — chaque commande se prépare sur mesure. Contactez-nous directement.</p>
+  <a href="https://wa.me/212613043469?text=Bonjour%20Tiyni%20Gold%2C%20je%20veux%20commander%20du%20Majhoul" target="_blank" class="btn btn-resa mj-btn reveal" data-i18n="mj_wa">💬 Commander le Majhoul sur WhatsApp</a>
+</section>
+
 <!-- AUTHENTICITE -->
 <section class="auth-sec">
   <div class="auth-box reveal">
@@ -613,6 +639,7 @@ const T = {
 fr:{
   trust_kicker:"✦ Pourquoi Tiyni Gold",trust_title:"Parce que nous sommes les producteurs, pas des revendeurs",t1_t:"Nos propres palmeraies",t1_p:"Tout ce que nous vendons vient de nos jardins, à Figuig. Nous sommes Figuiguais, de père en fils — pas des intermédiaires.",t2_t:"Une confiance de longue date",t2_p:"Notre notoriété parle depuis des années — et nos clients ne nous quittent jamais. C'est ça, la vraie preuve.",t3_t:"Fraîcheur garantie",t3_p:"Nos dattes ne passent jamais au frigo avant d'arriver chez vous. Une fois reçues, mettez-les au froid : elles restent fraîches, même goût, même texture, même couleur — rien ne change.",t4_t:"Direct de l'oasis à votre porte",t4_p:"Pas de stockage, pas de transit intermédiaire. Nous récoltons, nous emballons, nous vous livrons — c'est tout.",trust_sig:"— Tiyni Gold, Figuig. De père en fils, au service de la vraie datte.",
   auth_kicker:"✦ Attention aux imitations",auth_title:"La vraie Aziza ne pousse qu'à Figuig",auth_p1:"Vous trouverez peut-être ailleurs des dattes vendues sous le nom « Aziza » — un prénom amazigh que n'importe qui peut utiliser.",auth_p2:"Mais Aziza n'est pas qu'un nom : c'est une variété unique, née de nos palmeraies de Figuig, avec un goût qu'aucune autre datte ne peut reproduire.",auth_p3:"Qui y a goûté une fois ne mange plus jamais une autre datte.",
+  mj_kicker:"✦ Sur demande uniquement",mj_sec_title:"Majhoul — la reine des dattes",mj_sec_sub:"Charnue, généreuse, fondante — les photos parlent d'elles-mêmes : regardez le calibre sur l'arbre.",mj_note:"Le Majhoul ne se réserve pas en ligne — chaque commande se prépare sur mesure. Contactez-nous directement.",mj_wa:"💬 Commander le Majhoul sur WhatsApp",
   as_flash:"🔥 RÉCOLTE DÈS LE 15 SEPTEMBRE",as_title:"Dattes Assiane",as_teaser:"La première de la saison — fondante, douce, fraîche de l'oasis.",as_btn:"🔥 Réserver",
   az_flash2:"⚡ RÉCOLTE FIN SEPTEMBRE — 90% DÉJÀ RÉSERVÉ",az_title2:"Dattes Aziza",az_teaser:"La datte la plus rare et la plus chère du Maroc — et elle le vaut.",az_btn2:"🔥 Réserver",
   mj_flash:"🔥 RÉCOLTE DÈS LE 15 SEPTEMBRE",mj_title2:"Dattes Majhoul",mj_teaser:"La reine des dattes — charnue, généreuse, inoubliable.",mj_btn2:"🔥 Réserver",
@@ -711,6 +738,7 @@ fr:{
 ar:{
   trust_kicker:"✦ علاش Tiyni Gold",trust_title:"حيت حنا المنتجين، ماشي غير بائعين",t1_t:"النخيل ديالنا",t1_p:"كلشي لي كنبيعو كيجي من جناناتنا ففجيج. حنا فجيجيين، من الأب للجد — ماشي وسطاء.",t2_t:"ثقة منذ سنوات",t2_p:"سمعتنا كتتكلم منذ سنين — وزبنائنا ما كيبدلوناش أبداً. هادشي هو الدليل الحقيقي.",t3_t:"الطزاجة مضمونة",t3_p:"تمورنا ما كتدخلش للثلاجة قبل ما توصل ليك. ملي توصلك، ديرها فالفريجي: كتبقى طازجة، نفس المذاق، نفس القوام، نفس اللون — والو ما كيتبدل.",t4_t:"من الواحة لباب دارك",t4_p:"بلا تخزين، بلا وسطاء. كنقطفو، كنغلفو، كنوصلو ليك — سالينا.",trust_sig:"— Tiyni Gold، فجيج. من الأب للجد، فخدمة التمرة الحقيقية.",
   auth_kicker:"✦ انتبهوا من التقليد",auth_title:"أزيزا الحقيقية لا تنبت إلا في فجيج",auth_p1:"قد تجدون في أماكن أخرى تمورًا تُباع باسم «أزيزا» — وهو اسم أمازيغي يمكن لأيٍّ كان أن يستعمله.",auth_p2:"لكن أزيزا ليست مجرد اسم، بل هي صنفٌ فريد وُلد في نخيل واحة فجيج، بطعمٍ لا تضاهيه أي تمرة أخرى في العالم.",auth_p3:"من ذاقها مرةً واحدة، لم يعد يأكل بعدها أي تمرة سواها.",
+  mj_kicker:"✦ بالطلب فقط",mj_sec_title:"مجهول — ملكة التمور",mj_sec_sub:"لحيمة، سخية، ذائبة — الصور تتكلم عن نفسها: انظروا إلى الحجم على النخلة.",mj_note:"المجهول لا يُحجز عبر الموقع — كل طلب يُحضَّر خصيصاً. تواصلوا معنا مباشرة.",mj_wa:"💬 اطلب المجهول عبر واتساب",
   as_flash:"🔥 الحصاد من 15 شتنبر",as_title:"تمور العصيان",as_teaser:"الأولى في الموسم — ذائبة، حلوة، طازجة من الواحة.",as_btn:"🔥 احجز الآن",
   az_flash2:"⚡ الحصاد آخر شتنبر — 90% محجوزة",az_title2:"تمور أزيزا",az_teaser:"أندر وأغلى تمرة في المغرب — وتستاهل ثمنها.",az_btn2:"🔥 احجز الآن",
   mj_flash:"🔥 الحصاد من 15 شتنبر",mj_title2:"تمور مجهول",mj_teaser:"ملكة التمور — لحمية، سخية، لا تُنسى.",mj_btn2:"🔥 احجز الآن",
@@ -809,6 +837,7 @@ ar:{
 en:{
   trust_kicker:"✦ Why Tiyni Gold",trust_title:"Because we are the growers, not resellers",t1_t:"Our own palm groves",t1_p:"Everything we sell comes from our own gardens in Figuig. We are Figuigui, father to son — not middlemen.",t2_t:"Trusted for years",t2_p:"Our reputation speaks for years — and our customers never leave us. That is the real proof.",t3_t:"Freshness guaranteed",t3_p:"Our dates never go in the fridge before reaching you. Once received, put them in the cold: they stay fresh — same taste, same texture, same colour. Nothing changes.",t4_t:"From the oasis straight to your door",t4_p:"No storage, no middlemen. We harvest, we pack, we deliver — that is all.",trust_sig:"— Tiyni Gold, Figuig. Father to son, serving the real date.",
   auth_kicker:"✦ Beware of imitations",auth_title:"True Aziza grows only in Figuig",auth_p1:"You may find dates sold elsewhere under the name ‘Aziza’ — an Amazigh name anyone can use.",auth_p2:"But Aziza is not just a name: it is a unique variety, born in our Figuig palm groves, with a taste no other date in the world can match.",auth_p3:"Whoever tastes it once never eats another date again.",
+  mj_kicker:"✦ On request only",mj_sec_title:"Majhoul — the queen of dates",mj_sec_sub:"Fleshy, generous, melting — the photos speak for themselves: look at the size on the palm.",mj_note:"Majhoul is not reserved online — every order is prepared to measure. Contact us directly.",mj_wa:"💬 Order Majhoul on WhatsApp",
   as_flash:"🔥 HARVEST FROM SEPTEMBER 15",as_title:"Assiane Dates",as_teaser:"First of the season — melt-in-your-mouth, sweet, fresh from the oasis.",as_btn:"🔥 Reserve",
   az_flash2:"⚡ HARVEST LATE SEPTEMBER — 90% ALREADY RESERVED",az_title2:"Aziza Dates",az_teaser:"The rarest and most precious date in Morocco — and worth it.",az_btn2:"🔥 Reserve",
   mj_flash:"🔥 HARVEST FROM SEPTEMBER 15",mj_title2:"Majhoul Dates",mj_teaser:"The queen of dates — fleshy, generous, unforgettable.",mj_btn2:"🔥 Reserve",
@@ -907,6 +936,7 @@ en:{
 es:{
   trust_kicker:"✦ Por qué Tiyni Gold",trust_title:"Porque somos los productores, no revendedores",t1_t:"Nuestros propios palmerales",t1_p:"Todo lo que vendemos viene de nuestros jardines en Figuig. Somos de Figuig, de padre a hijo — no intermediarios.",t2_t:"Confianza desde hace años",t2_p:"Nuestra reputación habla desde hace años — y nuestros clientes nunca nos dejan. Esa es la verdadera prueba.",t3_t:"Frescura garantizada",t3_p:"Nuestros dátiles nunca pasan por la nevera antes de llegar a ti. Una vez recibidos, métalos al frío: siguen frescos — mismo sabor, misma textura, mismo color. Nada cambia.",t4_t:"Del oasis a tu puerta",t4_p:"Sin almacenamiento, sin intermediarios. Cosechamos, envasamos, entregamos — y ya.",trust_sig:"— Tiyni Gold, Figuig. De padre a hijo, al servicio del dátil auténtico.",
   auth_kicker:"✦ Cuidado con las imitaciones",auth_title:"La verdadera Aziza solo crece en Figuig",auth_p1:"Quizá encuentre en otros sitios dátiles vendidos con el nombre «Aziza» — un nombre amazigh que cualquiera puede usar.",auth_p2:"Pero Aziza no es solo un nombre: es una variedad única, nacida en nuestros palmerales de Figuig, con un sabor que ningún otro dátil del mundo puede igualar.",auth_p3:"Quien la prueba una vez, no vuelve a comer otro dátil.",
+  mj_kicker:"✦ Solo bajo pedido",mj_sec_title:"Majhoul — la reina de los dátiles",mj_sec_sub:"Carnoso, generoso, fundente — las fotos hablan por sí solas: mire el calibre en la palmera.",mj_note:"El Majhoul no se reserva en línea — cada pedido se prepara a medida. Contáctenos directamente.",mj_wa:"💬 Pedir Majhoul por WhatsApp",
   as_flash:"🔥 COSECHA DESDE EL 15 DE SEPTIEMBRE",as_title:"Dátiles Assiane",as_teaser:"La primera de la temporada — tierna, dulce, fresca del oasis.",as_btn:"🔥 Reservar",
   az_flash2:"⚡ COSECHA FIN DE SEPTIEMBRE — 90% YA RESERVADO",az_title2:"Dátiles Aziza",az_teaser:"El dátil más raro y preciado de Marruecos — y lo vale.",az_btn2:"🔥 Reservar",
   mj_flash:"🔥 COSECHA DESDE EL 15 DE SEPTIEMBRE",mj_title2:"Dátiles Majhoul",mj_teaser:"La reina de los dátiles — carnosa, generosa, inolvidable.",mj_btn2:"🔥 Reservar",

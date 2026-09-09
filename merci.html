@@ -409,9 +409,19 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
       <img src="images/aziza.jpg" alt="Aziza" style="width:100%;max-width:300px;border-radius:12px;margin-bottom:14px">
       <h3 id="upT" style="color:#d4af37;margin:0 0 8px"></h3>
       <p id="upP" style="opacity:.85;margin:0 0 16px"></p>
+      <div style="margin-bottom:14px">
+        <select id="upQty" style="padding:10px 18px;border-radius:10px;background:#0d0a07;color:#e8d9b0;border:1px solid #c9a227;font-size:1rem">
+          <option value="2">2 kg</option><option value="4">4 kg</option>
+          <option value="6">6 kg</option><option value="8">8 kg</option><option value="10">10 kg</option>
+        </select>
+      </div>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <a id="upB1" class="btn btn-sm" href="#">Aziza 1ère qualité</a>
-        <a id="upB2" class="btn btn-outline btn-sm" href="#">Aziza 2ème premium</a>
+        <button id="upB1" class="btn btn-sm" onclick="quickAziza(1)">Aziza 1ère qualité</button>
+        <button id="upB2" class="btn btn-outline btn-sm" onclick="quickAziza(2)">Aziza 2ème premium</button>
+      </div>
+          <div id="azAdded" hidden style="margin-top:20px">
+        <p id="azAddedLine" style="color:#7ddb8a;font-weight:700"></p>
+        <p id="azAddedMsg" data-i18n="up_added_msg" style="opacity:.85;font-size:.95rem">On vous appellera pour tout confirmer ensemble — une seule livraison.</p>
       </div>
     </div>
   </div>
@@ -430,6 +440,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 <script>
 const T = {
 fr:{
+  up_added:"Aziza ajoutée :",up_added_msg:"On vous appellera pour tout confirmer ensemble — une seule livraison.",th_total2:"Nouveau total : {total} DH",
   topbar:"🚚 Livraison gratuite dès 2 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -524,6 +535,7 @@ fr:{
   th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (à partir du 15 septembre), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
 },
 ar:{
+  up_added:"تمت إضافة أزيزا :",up_added_msg:"سنتصل بك لتأكيد كل شيء معاً — في توصيلة واحدة.",th_total2:"المجموع الجديد : {total} درهم",
   topbar:"🚚 التوصيل مجاني ابتداءً من 2 كغ — الدفع عند الاستلام",
   nav_figuig:"فيجيج",nav_products:"تمورنا",nav_why:"لماذا أزيزا؟",nav_order:"احجز أزيزا",
   hero_badge:"✦ من واحات فيجيج مباشرة",
@@ -618,6 +630,7 @@ ar:{
   th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
 },
 en:{
+  up_added:"Aziza added:",up_added_msg:"We will call you to confirm everything together — one single delivery.",th_total2:"New total: {total} MAD",
   topbar:"🚚 Free delivery from 2 kg — Cash on delivery",
   nav_figuig:"Figuig",nav_products:"Our dates",nav_why:"Why Aziza?",nav_order:"Reserve Aziza",
   hero_badge:"✦ Straight from the Figuig oases",
@@ -712,6 +725,7 @@ en:{
   th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
 },
 es:{
+  up_added:"Aziza añadida:",up_added_msg:"Te llamaremos para confirmar todo junto — una sola entrega.",th_total2:"Nuevo total: {total} MAD",
   topbar:"🚚 Entrega gratis desde 2 kg — Pago contra entrega",
   nav_figuig:"Figuig",nav_products:"Nuestros dátiles",nav_why:"¿Por qué Aziza?",nav_order:"Reservar Aziza",
   hero_badge:"✦ Directamente de los oasis de Figuig",
@@ -822,11 +836,29 @@ if(!isAz){
   document.getElementById('upsellZone').hidden=false;
   document.getElementById('upT').textContent=L.up_t||'';
   document.getElementById('upP').textContent=L.up_p||'';
-  const name=q.get('n')||'',phone=q.get('ph')||'',city=q.get('c')||'';
   document.getElementById('upB1').textContent=L.up_b1||'Aziza 1ère qualité';
   document.getElementById('upB2').textContent=L.up_b2||'Aziza 2ème premium';
-  document.getElementById('upB1').href='aziza.html?n='+encodeURIComponent(name)+'&ph='+encodeURIComponent(phone)+'&c='+encodeURIComponent(city)+'&opt=1';
-  document.getElementById('upB2').href='aziza.html?n='+encodeURIComponent(name)+'&ph='+encodeURIComponent(phone)+'&c='+encodeURIComponent(city)+'&opt=2';
+}
+function quickAziza(tier){
+  const name=q.get('n')||'',phone=q.get('ph')||'',city=q.get('c')||'';
+  const qty=parseInt(document.getElementById('upQty').value,10);
+  const price=tier===1?249:179;
+  const prodName=tier===1?'Aziza 1ère qualité':'Aziza 2ème qualité premium';
+  const total=qty*price;
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbxGxvxeiGgeGvxQ8az12QXPqvgQLOQRut3rVA9EwTGDks9DbIGvcF5MV7FPnLgkUDT2/exec';
+  let iframe=document.getElementById('sheetFrame');
+  if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
+  const f=document.createElement('form');
+  f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
+  const data={name:name,phone:phone,city:city,product:prodName,qty:qty,total:total};
+  for(const k in data){const inp=document.createElement('input');inp.name=k;inp.value=data[k];f.appendChild(inp);}
+  document.body.appendChild(f);f.submit();
+  document.getElementById('upsellZone').hidden=true;
+  document.getElementById('azAdded').hidden=false;
+  const azLine=document.getElementById('azAddedLine');
+  azLine.textContent='✅ '+(L.up_added||'Aziza ajoutée :')+' '+prodName+' — '+qty+' kg — '+total+' DH';
+  const oldTotal=parseInt((q.get('t')||'0').replace(/[^0-9]/g,''),10)||0;
+  document.getElementById('thanksTotal').textContent=(L.th_total2||'Nouveau total : {total} DH').replace('{total}',oldTotal+total);
 }
 </script>
 </body>

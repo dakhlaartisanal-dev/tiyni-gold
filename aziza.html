@@ -443,16 +443,18 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <div class="field">
           <label for="product" data-i18n="f_product">Produit</label>
           <select id="product">
-            <option data-i18n="opt1" selected>Aziza 1ère qualité</option>
+            <option data-i18n="opt1" selected data-premium="0">Aziza 1ère qualité — 250 DH/kg</option>
+            <option data-i18n="opt2" data-premium="1">Aziza 2ème qualité premium — 180 DH/kg</option>
           </select>
         </div>
         <div class="field">
           <label for="qty" data-i18n="f_qty">Quantité</label>
           <select id="qty">
-            <option value="10">10 kg</option><option value="20">20 kg</option>
-            <option value="30">30 kg</option><option value="40">40 kg</option><option value="50">50 kg</option>
-            <option value="60">60 kg</option><option value="70">70 kg</option><option value="80">80 kg</option>
-            <option value="90">90 kg</option><option value="100">100 kg</option>
+            <option value="2">2 kg</option><option value="4">4 kg</option>
+            <option value="6">6 kg</option><option value="8">8 kg</option><option value="10">10 kg</option>
+            <option value="20">20 kg</option><option value="30">30 kg</option><option value="40">40 kg</option>
+            <option value="50">50 kg</option><option value="60">60 kg</option><option value="70">70 kg</option>
+            <option value="80">80 kg</option><option value="90">90 kg</option><option value="100">100 kg</option>
             <option value="110">110 kg</option><option value="120">120 kg</option><option value="150">150 kg</option>
           </select>
         </div>
@@ -579,10 +581,10 @@ fr:{
   form_sub:"Remplissez vos informations, on vous appelle pour confirmer. <b>Paiement à la livraison.</b>",
   f_name:"Nom complet",f_name_ph:"Ex : Youssef Alaoui",
   f_phone:"Numéro de téléphone",f_product:"Produit",
-  opt1:"Aziza 1ère qualité",
+  opt1:"Aziza 1ère qualité — 250 DH/kg",
   f_detail:"{qty} kg × {rate} DH/kg",
   f_deliv:"🚚 Livraison gratuite dès 2 kg, partout au Maroc",
-  opt2:"Aziza 2ème qualité premium",
+  opt2:"Aziza 2ème qualité premium — 180 DH/kg",
   opt3:"Boufeggous — 79 DH/kg",
   opt4:"Assiane",
   opt5:"Majhoul standard",
@@ -673,10 +675,10 @@ ar:{
   form_sub:"املأ معلوماتك وسنتصل بك للتأكيد. <b>الدفع عند الاستلام.</b>",
   f_name:"الاسم الكامل",f_name_ph:"مثال: يوسف العلوي",
   f_phone:"رقم الهاتف",f_product:"المنتج",
-  opt1:"أزيزا — الجودة الأولى",
+  opt1:"أزيزا — الجودة الأولى — 250 درهم/كغ",
   f_detail:"{qty} كغ × {rate} درهم/كغ",
   f_deliv:"🚚 التوصيل مجاني ابتداءً من 2 كغ، في جميع أنحاء المغرب",
-  opt2:"أزيزا — الجودة الثانية بريميوم",
+  opt2:"أزيزا — الجودة الثانية بريميوم — 180 درهم/كغ",
   opt3:"بوفكوس — 79 درهم/كيلو",
   opt4:"العصيان",
   opt5:"مجهول ستاندار",
@@ -767,10 +769,10 @@ en:{
   form_sub:"Fill in your details and we'll call you to confirm. <b>Cash on delivery.</b>",
   f_name:"Full name",f_name_ph:"E.g. Youssef Alaoui",
   f_phone:"Phone number",f_product:"Product",
-  opt1:"Aziza 1st quality",
+  opt1:"Aziza 1st quality — 250 DH/kg",
   f_detail:"{qty} kg × {rate} MAD/kg",
   f_deliv:"🚚 Free delivery from 2 kg, everywhere in Morocco",
-  opt2:"Aziza 2nd quality premium",
+  opt2:"Aziza 2nd quality premium — 180 DH/kg",
   opt3:"Boufeggous — 79 MAD/kg",
   opt4:"Assiane",
   opt5:"Majhoul standard",
@@ -861,10 +863,10 @@ es:{
   form_sub:"Rellena tus datos y te llamamos para confirmar. <b>Pago contra entrega.</b>",
   f_name:"Nombre completo",f_name_ph:"Ej.: Youssef Alaoui",
   f_phone:"Número de teléfono",f_product:"Producto",
-  opt1:"Aziza 1ª calidad",
+  opt1:"Aziza 1ª calidad — 250 DH/kg",
   f_detail:"{qty} kg × {rate} MAD/kg",
   f_deliv:"🚚 Entrega gratis desde 2 kg, en todo Marruecos",
-  opt2:"Aziza 2ª calidad premium",
+  opt2:"Aziza 2ª calidad premium — 180 DH/kg",
   opt3:"Boufeggous — 79 MAD/kg",
   opt4:"Assiane",
   opt5:"Majhoul estándar",
@@ -953,14 +955,17 @@ document.querySelectorAll('.calc').forEach(calc=>{
 // Live total in order form
 const prodSel=document.getElementById('product'),qtySel=document.getElementById('qty'),
       totalValueEl=document.getElementById('totalValue'),totalSaveEl=document.getElementById('totalSave');
-function azizaRate(qty){
+function azizaRate(qty,premium){
+  if(premium)return 180;
   if(qty>=110)return 220;
-  if(qty>=50)return 230;
-  return 240;
+  if(qty>=60)return 230;
+  if(qty>=20)return 240;
+  return 250;
 }
 function orderTotal(){
   const qty=parseInt(qtySel.value);
-  const rate=azizaRate(qty);
+  const premium=prodSel.options[prodSel.selectedIndex].dataset.premium==='1';
+  const rate=azizaRate(qty,premium);
   return {total:rate*qty,saved:0,qty,rate};
 }
 function renderTotal(){

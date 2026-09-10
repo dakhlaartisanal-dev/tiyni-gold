@@ -456,6 +456,10 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <label for="city" data-i18n="f_city">Ville</label>
         <input type="text" id="city" data-i18n-ph="f_city_ph" placeholder="Ex : Casablanca" required>
       </div>
+      <div class="field">
+        <label for="address" data-i18n="f_addr">Adresse de livraison (optionnel)</label>
+        <input type="text" id="address" data-i18n-ph="f_addr_ph" placeholder="Ex : Hay Riad, rue 12, n°5">
+      </div>
       <div class="total-box" id="totalBox">
         <span class="total-label" data-i18n="f_total">Total à payer :</span>
         <span class="total-value" id="totalValue">299 DH</span>
@@ -578,7 +582,7 @@ fr:{
   opt4:"Assiane",
   opt5:"Majhoul standard",
   opt6:"Majhoul Premium grand calibre",
-  f_qty:"Quantité",f_city:"Ville",f_city_ph:"Ex : Casablanca",
+  f_qty:"Quantité",f_city:"Ville",f_city_ph:"Ex : Casablanca",f_addr:"Adresse de livraison (optionnel)",f_addr_ph:"Ex : Hay Riad, rue 12, n°5",
   f_submit:"✅ Confirmer — Paiement à la livraison",
   f_note:"🚚 Livraison gratuite dès 2 kg • On vous appelle avant l'envoi",
   footer_p1:"Dattes authentiques des oasis de Figuig 🇲🇦 — de l'oasis à votre porte",
@@ -672,7 +676,7 @@ ar:{
   opt4:"العصيان",
   opt5:"مجهول ستاندار",
   opt6:"مجهول بريميوم حجم كبير",
-  f_qty:"الكمية",f_city:"المدينة",f_city_ph:"مثال: الدار البيضاء",
+  f_qty:"الكمية",f_city:"المدينة",f_city_ph:"مثال: الدار البيضاء",f_addr:"عنوان التوصيل (اختياري)",f_addr_ph:"مثال: حي الرياض، شارع 12، رقم 5",
   f_submit:"✅ أكّد — الدفع عند الاستلام",
   f_note:"🚚 التوصيل مجاني ابتداءً من 2 كغ • نتصل بك قبل الإرسال",
   footer_p1:"تمور أصيلة من واحات فيجيج 🇲🇦 — من الواحة إلى باب منزلك",
@@ -766,7 +770,7 @@ en:{
   opt4:"Assiane",
   opt5:"Majhoul standard",
   opt6:"Majhoul Premium grand calibre",
-  f_qty:"Quantity",f_city:"City",f_city_ph:"E.g. Casablanca",
+  f_qty:"Quantity",f_city:"City",f_city_ph:"E.g. Casablanca",f_addr:"Delivery address (optional)",f_addr_ph:"E.g. Hay Riad, street 12, n°5",
   f_submit:"✅ Confirm — Cash on delivery",
   f_note:"🚚 Free delivery from 2 kg • We call you before shipping",
   footer_p1:"Authentic dates from the Figuig oases 🇲🇦 — from the oasis to your door",
@@ -860,7 +864,7 @@ es:{
   opt4:"Assiane",
   opt5:"Majhoul estándar",
   opt6:"Majhoul Premium gran calibre",
-  f_qty:"Cantidad",f_city:"Ciudad",f_city_ph:"Ej.: Casablanca",
+  f_qty:"Cantidad",f_city:"Ciudad",f_city_ph:"Ej.: Casablanca",f_addr:"Dirección de entrega (opcional)",f_addr_ph:"Ej.: Hay Riad, calle 12, n°5",
   f_submit:"✅ Confirmar — Pago contra entrega",
   f_note:"🚚 Entrega gratis desde 2 kg • Te llamamos antes del envío",
   footer_p1:"Dátiles auténticos de los oasis de Figuig 🇲🇦 — del oasis a tu puerta",
@@ -967,6 +971,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   const name=document.getElementById('name').value.trim();
   const phone=document.getElementById('phone').value.trim();
   const city=document.getElementById('city').value.trim();
+  const addr=document.getElementById('address').value.trim();
   if(!name||!phone||!city){
     const lang=document.documentElement.lang||'fr';
     const msgs={fr:'Veuillez remplir votre nom, téléphone et ville avant de valider.',ar:'يرجى ملء الاسم والهاتف والمدينة قبل التأكيد.',en:'Please fill in your name, phone and city before submitting.',es:'Por favor complete su nombre, teléfono y ciudad antes de enviar.'};
@@ -981,7 +986,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
   const f=document.createElement('form');
   f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
-  const data={name:name,phone:phone,city:city,product:prodName,qty:qty,total:total};
+  const data={name:name,phone:phone,city:addr?city+' — '+addr:city,product:prodName,qty:qty,total:total};
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
   document.body.appendChild(f);f.submit();
   setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);

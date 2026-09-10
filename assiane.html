@@ -453,7 +453,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
       </div>
       <div class="field">
         <label for="city" data-i18n="f_city">Ville</label>
-        <input type="text" id="city" data-i18n-ph="f_city_ph" placeholder="Ex : Casablanca">
+        <input type="text" id="city" data-i18n-ph="f_city_ph" placeholder="Ex : Casablanca" required>
       </div>
       <div class="total-box" id="totalBox">
         <span class="total-label" data-i18n="f_total">Total à payer :</span>
@@ -961,9 +961,15 @@ renderTotal();
 document.getElementById('orderForm').addEventListener('submit',e=>{
   e.preventDefault();
   const prodName=document.getElementById('product').selectedOptions[0].textContent;
-  const name=document.getElementById('name').value;
-  const phone=document.getElementById('phone').value;
-  const city=document.getElementById('city').value;
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const city=document.getElementById('city').value.trim();
+  if(!name||!phone||!city){
+    const lang=document.documentElement.lang||'fr';
+    const msgs={fr:'Veuillez remplir votre nom, téléphone et ville avant de valider.',ar:'يرجى ملء الاسم والهاتف والمدينة قبل التأكيد.',en:'Please fill in your name, phone and city before submitting.',es:'Por favor complete su nombre, teléfono y ciudad antes de enviar.'};
+    alert(msgs[lang]||msgs.fr);
+    return;
+  }
   const qty=document.getElementById('qty').value;
   const total=document.getElementById('totalValue').textContent;
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});

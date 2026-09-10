@@ -220,6 +220,7 @@ html[dir="rtl"] .price{font-family:'Amiri',serif}
 .resa-note b{color:#ff9d92}
 .tier-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(212,169,78,.25)}
 .tier-row:last-of-type{border-bottom:none}
+.tier-price{color:#d4af37;font-weight:700;white-space:nowrap}
 .tier-name{font-weight:700;font-size:.98rem}
 .tier-name small{display:block;color:var(--muted);font-weight:400;font-size:.82rem}
 .btn-resa{background:linear-gradient(135deg,var(--red),#c23a2d);color:#fff;box-shadow:0 8px 30px rgba(224,88,74,.5);text-transform:uppercase;letter-spacing:.5px}
@@ -411,9 +412,11 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <div class="resa-note" data-i18n-html="az_note">📅 <b>Récolte : fin septembre.</b> Traitement spécial et quantité très limitée. <b>90% de la récolte est déjà réservée</b> par nos clients fidèles chaque année. Réservez dès maintenant pour ne rien manquer — surtout la première qualité.</div>
         <div class="tier-row">
           <div class="tier-name"><span data-i18n="az_t1">1ère qualité</span><small data-i18n="az_t1s">La plus rare, grain par grain</small></div>
+          <div class="tier-price" data-i18n="az_p1">250 DH/kg</div>
         </div>
         <div class="tier-row">
           <div class="tier-name"><span data-i18n="az_t2">2ème qualité premium</span><small data-i18n="az_t2s">La même datte d'exception</small></div>
+          <div class="tier-price" data-i18n="az_p2">180 DH/kg</div>
         </div>
         <a href="#order" class="btn btn-resa btn-sm" style="margin-top:16px" data-i18n="az_btn">🔥 Réserver ma commande</a>
       </div>
@@ -440,15 +443,17 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <div class="field">
           <label for="product" data-i18n="f_product">Produit</label>
           <select id="product">
-            <option data-i18n="opt1" selected data-base="249" data-bulk="249">Aziza 1ère qualité</option>
-            <option data-i18n="opt2" data-base="179" data-bulk="179">Aziza 2ème qualité premium</option>
+            <option data-i18n="opt1" selected>Aziza 1ère qualité</option>
           </select>
         </div>
         <div class="field">
           <label for="qty" data-i18n="f_qty">Quantité</label>
           <select id="qty">
-            <option value="2">2 kg</option><option value="4">4 kg</option>
-            <option value="6">6 kg</option><option value="8">8 kg</option><option value="10">10 kg</option>
+            <option value="10">10 kg</option><option value="20">20 kg</option>
+            <option value="30">30 kg</option><option value="40">40 kg</option><option value="50">50 kg</option>
+            <option value="60">60 kg</option><option value="70">70 kg</option><option value="80">80 kg</option>
+            <option value="90">90 kg</option><option value="100">100 kg</option>
+            <option value="110">110 kg</option><option value="120">120 kg</option><option value="150">150 kg</option>
           </select>
         </div>
       </div>
@@ -527,7 +532,7 @@ fr:{
   prod_sub:"Quatre variétés, une même exigence : le naturel absolu de l'oasis.",
   az_flash:"⚡ RÉSERVATION OUVERTE",az_title:"Dattes Aziza",
   az_note:'📅 <b>Récolte : fin septembre.</b> Traitement spécial et quantité très limitée. <b>90% de la récolte est déjà réservée</b> par nos clients fidèles chaque année. Réservez dès maintenant pour ne rien manquer — surtout la première qualité.',
-  az_t1:"1ère qualité",az_t1s:"La plus rare, grain par grain",
+  az_t1:"1ère qualité",az_t1s:"La plus rare, grain par grain",az_p1:"250 DH/kg",az_p2:"180 DH/kg",
   az_t2:"2ème qualité premium",az_t2s:"La même datte d'exception",
   az_q1:"1ère qualité",az_q2:"2ème premium",
   kg:"DH/kg",kg2:"DH/kg",
@@ -621,7 +626,7 @@ ar:{
   prod_sub:"أربعة أصناف، ومتطلب واحد: الطبيعة المطلقة للواحة.",
   az_flash:"⚡ الحجز مفتوح",az_title:"تمور أزيزا",
   az_note:'📅 <b>الحصاد: نهاية شتنبر.</b> معالجة خاصة وكمية محدودة جداً. <b>90% من المحصول محجوز مسبقاً</b> من طرف زبنائنا الوفيين كل سنة. احجز من الآن حتى لا يفوتك — خاصة الجودة الأولى.',
-  az_t1:"الجودة الأولى",az_t1s:"الأندر، حبة بحبة",
+  az_t1:"الجودة الأولى",az_t1s:"الأندر، حبة بحبة",az_p1:"250 درهم/كغ",az_p2:"180 درهم/كغ",
   az_t2:"الجودة الثانية بريميوم",az_t2s:"نفس التمرة الاستثنائية",
   az_q1:"الجودة الأولى",az_q2:"الثانية بريميوم",
   kg:"درهم/كيلو",kg2:"درهم/كيلو",
@@ -948,11 +953,15 @@ document.querySelectorAll('.calc').forEach(calc=>{
 // Live total in order form
 const prodSel=document.getElementById('product'),qtySel=document.getElementById('qty'),
       totalValueEl=document.getElementById('totalValue'),totalSaveEl=document.getElementById('totalSave');
+function azizaRate(qty){
+  if(qty>=110)return 220;
+  if(qty>=50)return 230;
+  return 240;
+}
 function orderTotal(){
-  const o=prodSel.options[prodSel.selectedIndex];
-  const base=parseFloat(o.dataset.base),bulk=parseFloat(o.dataset.bulk),qty=parseInt(qtySel.value);
-  const rate=(bulk<base&&qty>=2)?bulk:base;
-  return {total:rate*qty,saved:(base*qty)-(rate*qty),qty,rate};
+  const qty=parseInt(qtySel.value);
+  const rate=azizaRate(qty);
+  return {total:rate*qty,saved:0,qty,rate};
 }
 function renderTotal(){
   const t=orderTotal();

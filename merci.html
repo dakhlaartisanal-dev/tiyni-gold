@@ -419,9 +419,12 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
         <button id="upB1" class="btn btn-sm" onclick="quickAziza(1)">Aziza 1ère qualité</button>
         <button id="upB2" class="btn btn-outline btn-sm" onclick="quickAziza(2)">Aziza 2ème premium</button>
       </div>
-          <div id="azAdded" hidden style="margin-top:20px">
-        <p id="azAddedLine" style="color:#7ddb8a;font-weight:700"></p>
-        <p id="azAddedMsg" data-i18n="up_added_msg" style="opacity:.85;font-size:.95rem">On vous appellera pour tout confirmer ensemble — une seule livraison.</p>
+      <div id="recapZone" hidden style="margin-top:24px;text-align:left;background:#131008;border:1px solid rgba(201,162,39,.4);border-radius:14px;padding:20px 22px">
+        <h3 style="color:#d4af37;margin:0 0 14px;font-size:1.15rem;text-align:center" data-i18n="recap_t">📋 Récapitulatif de vos réservations</h3>
+        <div id="recapLines" style="font-size:1rem;line-height:2.1"></div>
+        <hr style="border:none;border-top:1px solid rgba(201,162,39,.3);margin:12px 0">
+        <p id="recapTotal" style="color:#E7C55B;font-weight:800;font-size:1.2rem;text-align:center;margin:0"></p>
+        <p id="recapNote" data-i18n="recap_note" style="opacity:.85;font-size:.92rem;text-align:center;margin:10px 0 0"></p>
       </div>
     </div>
   </div>
@@ -440,7 +443,7 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 <script>
 const T = {
 fr:{
-  up_added:"Aziza ajoutée :",up_added_msg:"On vous appellera pour tout confirmer ensemble — une seule livraison.",th_total2:"Nouveau total : {total} DH",
+  recap_t:"📋 Récapitulatif de vos réservations",recap_note:"Paiement à la livraison — on vous appellera pour tout confirmer. Majhoul/Assiane : livraison dès maintenant. Aziza : dès la récolte fin septembre.",recap_total:"Total : {total} DH — livraison gratuite",up_harvest:"livraison après la récolte d’Aziza, fin septembre",
   topbar:"🚚 Livraison gratuite dès 2 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -535,7 +538,7 @@ fr:{
   th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (à partir du 15 septembre), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
 },
 ar:{
-  up_added:"تمت إضافة أزيزا :",up_added_msg:"سنتصل بك لتأكيد كل شيء معاً — في توصيلة واحدة.",th_total2:"المجموع الجديد : {total} درهم",
+  recap_t:"📋 ملخص حجوزاتك",recap_note:"الدفع عند الاستلام — سنتصل بك لتأكيد كل شيء. مجهول/العصيان: التوصيل من الآن. أزيزا: بعد الحصاد آخر شتنبر.",recap_total:"المجموع : {total} درهم — التوصيل مجاني",up_harvest:"التوصيل بعد حصاد أزيزا، آخر شتنبر",
   topbar:"🚚 التوصيل مجاني ابتداءً من 2 كغ — الدفع عند الاستلام",
   nav_figuig:"فيجيج",nav_products:"تمورنا",nav_why:"لماذا أزيزا؟",nav_order:"احجز أزيزا",
   hero_badge:"✦ من واحات فيجيج مباشرة",
@@ -630,7 +633,7 @@ ar:{
   th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
 },
 en:{
-  up_added:"Aziza added:",up_added_msg:"We will call you to confirm everything together — one single delivery.",th_total2:"New total: {total} MAD",
+  recap_t:"📋 Your reservation summary",recap_note:"Cash on delivery — we will call you to confirm everything. Majhoul/Assiane: delivery now. Aziza: after the harvest, late September.",recap_total:"Total: {total} MAD — free delivery",up_harvest:"delivery after the Aziza harvest, late September",
   topbar:"🚚 Free delivery from 2 kg — Cash on delivery",
   nav_figuig:"Figuig",nav_products:"Our dates",nav_why:"Why Aziza?",nav_order:"Reserve Aziza",
   hero_badge:"✦ Straight from the Figuig oases",
@@ -725,7 +728,7 @@ en:{
   th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
 },
 es:{
-  up_added:"Aziza añadida:",up_added_msg:"Te llamaremos para confirmar todo junto — una sola entrega.",th_total2:"Nuevo total: {total} MAD",
+  recap_t:"📋 Resumen de tus reservas",recap_note:"Pago contra entrega — te llamaremos para confirmar todo. Majhoul/Assiane: entrega desde ahora. Aziza: tras la cosecha, finales de septiembre.",recap_total:"Total: {total} MAD — entrega gratuita",up_harvest:"entrega tras la cosecha de Aziza, finales de septiembre",
   topbar:"🚚 Entrega gratis desde 2 kg — Pago contra entrega",
   nav_figuig:"Figuig",nav_products:"Nuestros dátiles",nav_why:"¿Por qué Aziza?",nav_order:"Reservar Aziza",
   hero_badge:"✦ Directamente de los oasis de Figuig",
@@ -854,11 +857,20 @@ function quickAziza(tier){
   for(const k in data){const inp=document.createElement('input');inp.name=k;inp.value=data[k];f.appendChild(inp);}
   document.body.appendChild(f);f.submit();
   document.getElementById('upsellZone').hidden=true;
-  document.getElementById('azAdded').hidden=false;
-  const azLine=document.getElementById('azAddedLine');
-  azLine.textContent='✅ '+(L.up_added||'Aziza ajoutée :')+' '+prodName+' — '+qty+' kg — '+total+' DH';
+  const firstProd=q.get('p')||'';
+  const firstQty=q.get('q')||'';
   const oldTotal=parseInt((q.get('t')||'0').replace(/[^0-9]/g,''),10)||0;
-  document.getElementById('thanksTotal').textContent=(L.th_total2||'Nouveau total : {total} DH').replace('{total}',oldTotal+total);
+  const recap=document.getElementById('recapLines');
+  recap.innerHTML='';
+  const line1=document.createElement('div');
+  line1.textContent='1️⃣ '+firstProd+' — '+firstQty+' kg — '+oldTotal+' DH';
+  recap.appendChild(line1);
+  const line2=document.createElement('div');
+  line2.innerHTML='2️⃣ '+prodName+' — '+qty+' kg — '+total+' DH &nbsp;<span style="color:#d4af37;font-size:.9rem">('+(L.up_harvest||'livraison après la récolte d\u2019Aziza, fin septembre')+')</span>';
+  recap.appendChild(line2);
+  document.getElementById('recapTotal').textContent=(L.recap_total||'Total : {total} DH — livraison gratuite').replace('{total}',oldTotal+total);
+  document.getElementById('recapZone').hidden=false;
+  document.getElementById('recapZone').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
 </body>

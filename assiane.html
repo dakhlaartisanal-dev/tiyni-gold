@@ -998,7 +998,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
   const f=document.createElement('form');
   f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
-  const data={name:name,phone:phone,city:city,address:addr,product:prodName,qty:qty,total:total};
+  const data={name:name,phone:"'"+phone,city:city,address:addr,product:prodName,qty:qty,total:total};
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
   document.body.appendChild(f);f.submit();
   setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);

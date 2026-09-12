@@ -400,6 +400,18 @@ footer .logo{font-size:1.4rem;display:inline-block;margin-bottom:10px}
 .upsell p{opacity:.85;margin:0 0 16px;font-size:.95rem}
 
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2802488139911279');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2802488139911279&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 </head>
 
 <body class="product-page">
@@ -1000,6 +1012,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
   const data={name:name,phone:"'"+phone,city:city,address:addr,product:prodName,qty:qty,total:total};
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
+  try{fbq('track','Purchase',{value:parseFloat(String(total).replace(/[^0-9.]/g,''))||0,currency:'MAD',content_name:prodName});}catch(err){}
   document.body.appendChild(f);f.submit();
   setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);
 });

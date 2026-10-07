@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">Dattes Majhoul de Figuig — 169 DH/kg | Tiyni Gold | مجهول</title>
+<title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">Dattes Majhoul de Figuig — 169 DH/kg | Tiyni Gold | مجهول</title>
 <meta name="description" content="Dattes Majhoul charnues de nos palmeraies de Figuig, 169 DH/kg. Calibre exceptionnel, 100% naturelles, jamais au frigo. Réservation en ligne, paiement à la livraison partout au Maroc.">
 <meta name="keywords" content="majhoul, medjool maroc, dattes majhoul prix, مجهول, تمر مجهول, majhoul figuig, acheter majhoul maroc, tiyni gold">
 <meta name="robots" content="index, follow">
@@ -37,7 +37,25 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body<script>(function(){if(location.hash==='#order'){setTimeout(function(){var el=document.getElementById('order');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},400);}})();</script>{
+body{<script>
+(function(){
+  if(location.hash==='#order'){
+    setTimeout(function(){
+      var el=document.getElementById('order');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    },400);
+  }
+})();
+</script><script>
+(function(){
+  if(location.hash==='#order'){
+    setTimeout(function(){
+      var el=document.getElementById('order');
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    },400);
+  }
+})();
+</script>
   font-family:'Tajawal',sans-serif;
   background:var(--bg);
   color:var(--cream);
@@ -421,7 +439,7 @@ fbq('track', 'PageView');
     <a href="index.html#origin" data-i18n="nav_figuig">Figuig</a>
     <a href="index.html#products" data-i18n="nav_products">Nos dattes</a>
     <a href="index.html#why" data-i18n="nav_why">Pourquoi Aziza ?</a>
-    <a href="#order" class="btn btn-sm" data-i18n="nav_order">Réserver Aziza</a>
+    <a href="aziza.html#order" class="btn btn-sm" data-i18n="nav_order">Réserver Aziza</a>
   </div>
   <div class="lang-switch">
     <button data-lang="fr" class="active">FR</button>
@@ -439,7 +457,7 @@ fbq('track', 'PageView');
     <div class="card reveal">
       <div class="card-img"><img src="images/majhoul1.jpg" alt="Grappes de Majhoul sur le palmier — photo réelle de nos palmeraies"></div>
       <div class="card-body">
-        <span class="card-tag" data-i18n="p6_tag">⚡ Réservation — récolte dès le 15 sept.</span>
+        <span class="card-tag" data-i18n="p6_tag">⚡ Sur demande — récolte en cours</span>
         <h3 data-i18n="p6_title">Dattes Majhoul — 169 DH/kg</h3>
         <p data-i18n="p6_desc">La reine des dattes : charnue, généreuse, fondante en bouche, d'un calibre exceptionnel. Cultivée dans nos palmeraies de Figuig, récoltée à pleine maturité — un vrai régal.</p>
         <a href="#order" class="btn btn-resa btn-sm" style="margin-top:14px" data-i18n="order_btn2">🔥 Réserver</a>
@@ -454,7 +472,7 @@ fbq('track', 'PageView');
   <div class="order-wrap reveal">
     <h2 data-i18n="form_title">Réservez en 30 secondes</h2>
     <p class="sub" data-i18n-html="form_sub">Remplissez vos informations, on vous appelle pour confirmer. <b>Paiement à la livraison.</b></p>
-    <form id="orderForm">
+    <form id="orderForm" action="javascript:void(0);">
       <div class="field">
         <label for="name" data-i18n="f_name">Nom complet</label>
         <input type="text" id="name" data-i18n-ph="f_name_ph" placeholder="Ex : Youssef Alaoui" required>
@@ -522,7 +540,7 @@ fbq('track', 'PageView');
 <script>
 const T = {
 fr:{
-  up_t:"Et si vous ajoutiez Aziza ?",up_p:"La datte la plus rare du Maroc — récolte fin septembre. 90% déjà réservé.",up_b1:"Aziza 1ère qualité",up_b2:"Aziza 2ème premium",
+  up_t:"Et si vous ajoutiez Aziza ?",up_p:"La datte la plus rare du Maroc — la récolte n'a pas encore commencé. Réservez-la : on vous appellera dès qu'on commence.",up_b1:"Aziza 1ère qualité",up_b2:"Aziza 2ème premium",
   topbar:"🚚 Livraison gratuite dès 2 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -547,10 +565,10 @@ fr:{
   prod_kicker:"✦ Nos dattes",prod_title:"Le meilleur de Figuig",
   prod_sub:"Quatre variétés, une même exigence : le naturel absolu de l'oasis.",
   az_flash:"⚡ RÉSERVATION OUVERTE",az_title:"Dattes Aziza",
-  az_note:'📅 <b>Récolte : fin septembre.</b> Traitement spécial et quantité très limitée. <b>90% de la récolte est déjà réservée</b> par nos clients fidèles chaque année. Réservez dès maintenant pour ne rien manquer — surtout la première qualité.',
+  az_note:'📅 <b>Récolte : pas encore commencée.</b> Traitement spécial et quantité très limitée. <b>90% de la récolte est déjà réservée</b> par nos clients fidèles chaque année. Réservez dès maintenant pour ne rien manquer — surtout la première qualité.',
   az_t1:"1ère qualité",az_t1s:"La plus rare, grain par grain",
-  az_t2:"2ème qualité premium",az_t2s:"La même datte d'exception",
-  az_q1:"1ère qualité",az_q2:"2ème premium",
+  az_t2:"2ème qualité normale",az_t2s:"Même origine, petit calibre",
+  az_q1:"1ère qualité",az_q2:"2ème normale",
   kg:"DH/kg",kg2:"DH/kg",
   calc_label_az:"Quantité (1ère qualité) :",calc_total_az:"Total :",
   az_btn:"🔥 Réserver ma commande",
@@ -558,23 +576,23 @@ fr:{
   p2_desc:"Les dattes du quotidien : foncées, charnues et bien sucrées, à petit prix. Idéales pour la famille, la cuisine, les smoothies et le ramadan. Même origine, même sérieux — prix doux.",
   p2_unit:"DH / kg",
   calc_label_p2:"Choisissez votre quantité :",calc_total_p2:"Total :",order_btn:"Commander",
-  p6_tag:"⚡ Réservation — récolte dès le 15 sept.",p6_title:"Dattes Majhoul — 169 DH/kg",
+  p6_tag:"⚡ Sur demande — récolte en cours",p6_title:"Dattes Majhoul — 169 DH/kg",
   p6_desc:"La reine des dattes : charnue, généreuse, fondante en bouche, d'un calibre exceptionnel. Cultivée dans nos palmeraies de Figuig, récoltée à pleine maturité — un vrai régal.",
   p3_unit:"DH / kg",
   calc_label_p3:"Choisissez votre quantité :",calc_total_p3:"Total :",order_btn2:"🔥 Réserver",
-  p4_tag:"⚡ Réservation — récolte dès le 15 sept.",p4_title:"Dattes Majhoul",
+  p4_tag:"⚡ Sur demande — récolte en cours",p4_title:"Dattes Majhoul",
   p4_desc:"Le célèbre Majhoul : grosse datte brune, charnue et caramélisée. Choisissez votre qualité : standard pour le quotidien, ou Premium grand calibre — des dattes XXL sélectionnées une par une, la datte des occasions et des cadeaux qui impressionnent.",
   p4_unit:"DH / kg",
   mj_q1:"Standard",mj_q2:"Premium grand calibre",
   calc_label_p4:"Choisissez votre quantité :",calc_total_p4:"Total :",order_btn3:"🔥 Réserver",
-  p5_tag:"⚡ Réservation — récolte dès le 15 sept.",p5_title:"Majhoul Premium",
+  p5_tag:"⚡ Sur demande — récolte en cours",p5_title:"Majhoul Premium",
   p5_desc:"Le grand calibre du Majhoul : dattes XXL, ultra-charnues et brillantes, sélectionnées une par une. La datte des occasions et des cadeaux qui impressionnent.",
   p5_unit:"DH / kg",
   calc_label_p5:"Choisissez votre quantité :",calc_total_p5:"Total :",order_btn4:"Commander",
   calc_save:"Vous économisez {save} DH",
   why_kicker:"✦ Les bienfaits",why_title:"Pourquoi les gens choisissent Aziza ?",
   proc_kicker:"✦ Le traitement spécial Aziza",proc_title:"Pourquoi Aziza vaut son prix",
-  proc_sub:"Récolte fin septembre — 1ère qualité et 2ème qualité premium. Voilà comment naît la datte la plus rare du Maroc.",
+  proc_sub:"Récolte pas encore commencée — 1ère qualité et 2ème qualité. Voilà comment naît la datte la plus rare du Maroc.",
   st1_t:"On la couvre 2 à 3 semaines",st1_p:"Avant la récolte, chaque grappe est couverte et protégée pendant 2 à 3 semaines. La datte continue à mûrir tranquillement sur son régime.",
   st2_t:"Elle mûrit suspendue, sur sa grappe",st2_p:"Ensuite on la suspend : Aziza achève sa maturité naturellement sur sa grappe (arjon), au soleil de l'oasis. Aucune accélération, aucun artifice.",
   st3_t:"La 1ère qualité, grain par grain",st3_p:"Pour la première qualité, chaque datte est détachée à la main, une par une. C'est long, c'est minutieux — et c'est exactement pour ça qu'elle est unique.",
@@ -587,9 +605,9 @@ fr:{
   w5_t:"Toujours primée",w5_p:"Premières places aux expositions internationales — une qualité reconnue au-delà du Maroc.",
   fru_title:"Aziza : sucre de fruit, pas de glucose",
   fru_p:"Aziza contient du fructose — le sucre naturel des fruits — et non du glucose. C'est pour cela qu'elle est très appréciée des personnes avec un diabète léger et des personnes âgées, qui peuvent en profiter avec plaisir et sérénité.",
-  cta_flash:"⚡ RÉSERVATIONS OUVERTES — RÉCOLTE FIN SEPTEMBRE",
+  cta_flash:"⚡ SUR DEMANDE — RÉCOLTE EN COURS",
   cta_title:"Réservez votre Aziza avant tout le monde",
-  cta_sub:"⚠️ La réservation commence maintenant — la récolte démarre fin septembre. 90% est déjà promis à nos clients fidèles, année après année. Réservez aujourd'hui pour recevoir vos dattes fraîches, dès la récolte — notre confiance et notre notoriété, vous les voyez depuis des années, et nos clients ne nous quittent jamais.",
+  cta_sub:"⚠️ La réservation commence maintenant — la récolte n’a pas encore commencé. 90% est déjà promis à nos clients fidèles, année après année. Réservez aujourd'hui pour recevoir vos dattes fraîches, dès la récolte — notre confiance et notre notoriété, vous les voyez depuis des années, et nos clients ne nous quittent jamais.",
   cta_btn:"🔥 Réserver maintenant",
   form_title:"Réservez en 30 secondes",
   form_sub:"Remplissez vos informations, on vous appelle pour confirmer. <b>Paiement à la livraison.</b>",
@@ -598,7 +616,7 @@ fr:{
   opt1:"Aziza 1ère qualité",
   f_detail:"{qty} kg × {rate} DH/kg",
   f_deliv:"🚚 Livraison gratuite dès 2 kg, partout au Maroc",
-  opt2:"Aziza 2ème qualité premium",
+  opt2:"Aziza 2ème qualité normale",
   opt3:"Boufeggous — 79 DH/kg",
   opt4:"Assiane",
   opt5:"Majhoul standard",
@@ -617,7 +635,7 @@ fr:{
   th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (à partir du 15 septembre), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
 },
 ar:{
-  up_t:"وزيدو أزيزا مع طلبيتكم؟",up_p:"أندر تمرة في المغرب — الحصاد نهاية شتنبر. 90% محجوزة.",up_b1:"أزيزا — الجودة الأولى",up_b2:"أزيزا — بريميوم",
+  up_t:"وزيدو أزيزا مع طلبيتكم؟",up_p:"أندر تمرة في المغرب — الحصاد مازال ما بدا. احجزها وغادي نعيطو ليك ملي نبداو.",up_b1:"أزيزا — الجودة الأولى",up_b2:"أزيزا — بريميوم",
   topbar:"🚚 التوصيل مجاني ابتداءً من 2 كغ — الدفع عند الاستلام",
   nav_figuig:"فيجيج",nav_products:"تمورنا",nav_why:"لماذا أزيزا؟",nav_order:"احجز أزيزا",
   hero_badge:"✦ من واحات فيجيج مباشرة",
@@ -642,10 +660,10 @@ ar:{
   prod_kicker:"✦ تمورنا",prod_title:"أفضل ما في فيجيج",
   prod_sub:"أربعة أصناف، ومتطلب واحد: الطبيعة المطلقة للواحة.",
   az_flash:"⚡ الحجز مفتوح",az_title:"تمور أزيزا",
-  az_note:'📅 <b>الحصاد: نهاية شتنبر.</b> معالجة خاصة وكمية محدودة جداً. <b>90% من المحصول محجوز مسبقاً</b> من طرف زبنائنا الوفيين كل سنة. احجز من الآن حتى لا يفوتك — خاصة الجودة الأولى.',
+  az_note:'📅 <b>الحصاد: مازال ما بدا.</b> معالجة خاصة وكمية محدودة جداً. <b>90% من المحصول محجوز مسبقاً</b> من طرف زبنائنا الوفيين كل سنة. احجز من الآن حتى لا يفوتك — خاصة الجودة الأولى.',
   az_t1:"الجودة الأولى",az_t1s:"الأندر، حبة بحبة",
-  az_t2:"الجودة الثانية بريميوم",az_t2s:"نفس التمرة الاستثنائية",
-  az_q1:"الجودة الأولى",az_q2:"الثانية بريميوم",
+  az_t2:"الجودة الثانية العادية",az_t2s:"نفس الأصل، حجم أصغر",
+  az_q1:"الجودة الأولى",az_q2:"الثانية العادية",
   kg:"درهم/كيلو",kg2:"درهم/كيلو",
   calc_label_az:"الكمية (الجودة الأولى):",calc_total_az:"المجموع:",
   az_btn:"🔥 احجز طلبي",
@@ -653,23 +671,23 @@ ar:{
   p2_desc:"تمور الاستعمال اليومي: سمراء، لحمية وحلوة، بثمن مناسب. مثالية للعائلة، للمطبخ، للعصائر ولرمضان. نفس المصدر، نفس الجدية — بثمن خفيف.",
   p2_unit:"درهم / كيلو",
   calc_label_p2:"اختر الكمية:",calc_total_p2:"المجموع:",order_btn:"اطلب الآن",
-  p6_tag:"⚡ حجز — الحصاد ابتداءً من 15 شتنبر",p6_title:"تمور مجهول — 169 درهم/كغ",
+  p6_tag:"⚡ بالطلب — الحصاد جاري",p6_title:"تمور مجهول — 169 درهم/كغ",
   p6_desc:"ملكة التمور: لحيمة، سخية، تذوب في الفم، بحجم استثنائي. من نخيل واحة فجيج، تُقطف عند اكتمال نضجها — متعة حقيقية.",
   p3_unit:"درهم / كيلو",
   calc_label_p3:"اختر الكمية:",calc_total_p3:"المجموع:",order_btn2:"🔥 احجز الآن",
-  p4_tag:"⚡ حجز — الحصاد ابتداءً من 15 شتنبر",p4_title:"تمر المجهول",
+  p4_tag:"⚡ بالطلب — الحصاد جاري",p4_title:"تمر المجهول",
   p4_desc:"المجهول الشهير: تمرة كبيرة بنية، لحمية ومكرملة. اختر جودتك: ستاندار لليوميات، أو بريميوم كبير الحجم — حبات XXL منتقاة حبة بحبة، تمرة المناسبات والهدايا التي تُبهِر.",
   p4_unit:"درهم / كيلو",
   mj_q1:"ستاندار",mj_q2:"بريميوم حجم كبير",
   calc_label_p4:"اختر الكمية:",calc_total_p4:"المجموع:",order_btn3:"🔥 احجز الآن",
-  p5_tag:"⚡ حجز — الحصاد ابتداءً من 15 شتنبر",p5_title:"مجهول بريميوم",
+  p5_tag:"⚡ بالطلب — الحصاد جاري",p5_title:"مجهول بريميوم",
   p5_desc:"الحجم الكبير من المجهول: حبات XXL، لحمية جداً ولامعة، منتقاة حبة بحبة. تمرة المناسبات والهدايا التي تُبهِر.",
   p5_unit:"درهم / كيلو",
   calc_label_p5:"اختر الكمية:",calc_total_p5:"المجموع:",order_btn4:"اطلب الآن",
   calc_save:"توفر {save} درهم",
   why_kicker:"✦ الفوائد",why_title:"لماذا يختار الناس أزيزا؟",
   proc_kicker:"✦ المعالجة الخاصة بأزيزا",proc_title:"لماذا أزيزا يساوي ثمنه",
-  proc_sub:"الحصاد نهاية شتنبر — الجودة الأولى والثانية بريميوم. هكذا يولد أندر تمر في المغرب.",
+  proc_sub:"الحصاد مازال ما بدا — الجودة الأولى والثانية. هكذا يولد أندر تمر في المغرب.",
   st1_t:"نغطيها 2 إلى 3 أسابيع",st1_p:"قبل الحصاد، كل عرجون تُغطى ويُحمى لمدة 2 إلى 3 أسابيع. التمرة تكمل نضجها على مهلا فوق عرجونها.",
   st2_t:"تنضج معلقة على عرجونها",st2_p:"ثم نعلقها: أزيزا يكمل نضجه طبيعياً على عرجونه، تحت شمس الواحة. بدون تسريع، بدون أي حيلة.",
   st3_t:"الجودة الأولى، حبة بحبة",st3_p:"للجودة الأولى، كل تمرة تُفصل باليد، واحدة بواحدة. عمل طويل ودقيق — ولهذا بالضبط هي فريدة.",
@@ -682,9 +700,9 @@ ar:{
   w5_t:"حائزة دائماً على الرتبة الأولى",w5_p:"المراكز الأولى في المعارض الدولية — جودة معترف بها داخل المغرب وخارجه.",
   fru_title:"أزيزا: سكر الفاكهة، وليس الغلوكوز",
   fru_p:"أزيزا يحتوي على الفركتوز — سكر الفواكه الطبيعي — وليس الغلوكوز. لهذا هو محبوب جداً عند الأشخاص الذين لديهم سكري خفيف وكبار السن، يستمتعون به بسرور وطمأنينة.",
-  cta_flash:"⚡ الحجز مفتوح — الحصاد نهاية شتنبر",
+  cta_flash:"⚡ بالطلب — الحصاد جاري",
   cta_title:"احجز أزيزا ديالك قبل الجميع",
-  cta_sub:"⚠️ الحجز يبدأ الآن — الحصاد ينطلق نهاية شتنبر. 90% محجوز مسبقاً لزبنائنا الوفيين، عاماً بعد عام. احجز اليوم لتتوصل بتمورك طازجة، مباشرة من الحصاد — ثقتنا وسمعتنا ترونها منذ سنوات وسنوات، وزبناؤنا ما كيبدلوناش أبداً.",
+  cta_sub:"⚠️ الحجز يبدأ الآن — الحصاد مازال ما بدا. 90% محجوز مسبقاً لزبنائنا الوفيين، عاماً بعد عام. احجز اليوم لتتوصل بتمورك طازجة، مباشرة من الحصاد — ثقتنا وسمعتنا ترونها منذ سنوات وسنوات، وزبناؤنا ما كيبدلوناش أبداً.",
   cta_btn:"🔥 احجز الآن",
   form_title:"احجز في 30 ثانية",
   form_sub:"املأ معلوماتك وسنتصل بك للتأكيد. <b>الدفع عند الاستلام.</b>",
@@ -712,7 +730,7 @@ ar:{
   th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
 },
 en:{
-  up_t:"Why not add Aziza?",up_p:"The rarest date in Morocco — harvest late September. 90% already reserved.",up_b1:"Aziza 1st quality",up_b2:"Aziza 2nd premium",
+  up_t:"Why not add Aziza?",up_p:"The rarest date in Morocco — harvest not started yet. Reserve it: we will call you as soon as we start.",up_b1:"Aziza 1st quality",up_b2:"Aziza 2nd premium",
   topbar:"🚚 Free delivery from 2 kg — Cash on delivery",
   nav_figuig:"Figuig",nav_products:"Our dates",nav_why:"Why Aziza?",nav_order:"Reserve Aziza",
   hero_badge:"✦ Straight from the Figuig oases",
@@ -737,10 +755,10 @@ en:{
   prod_kicker:"✦ Our dates",prod_title:"The best of Figuig",
   prod_sub:"Four varieties, one standard: the absolute natural of the oasis.",
   az_flash:"⚡ RESERVATION OPEN",az_title:"Aziza Dates",
-  az_note:'📅 <b>Harvest: end of September.</b> Special treatment and very limited quantity. <b>90% of the harvest is already reserved</b> by our loyal customers every year. Reserve now so you miss nothing — especially the first quality.',
+  az_note:'📅 <b>Harvest: not started yet.</b> Special treatment and very limited quantity. <b>90% of the harvest is already reserved</b> by our loyal customers every year. Reserve now so you miss nothing — especially the first quality.',
   az_t1:"1st quality",az_t1s:"The rarest, picked one by one",
-  az_t2:"2nd quality premium",az_t2s:"The same exceptional date",
-  az_q1:"1st quality",az_q2:"2nd premium",
+  az_t2:"2nd quality",az_t2s:"Same origin, smaller size",
+  az_q1:"1st quality",az_q2:"2nd standard",
   kg:"MAD/kg",kg2:"MAD/kg",
   calc_label_az:"Quantity (1st quality):",calc_total_az:"Total:",
   az_btn:"🔥 Reserve my order",
@@ -748,23 +766,23 @@ en:{
   p2_desc:"Everyday dates: dark, fleshy and sweet, at a friendly price. Ideal for the family, cooking, smoothies and Ramadan. Same origin, same care — gentle price.",
   p2_unit:"MAD / kg",
   calc_label_p2:"Choose your quantity:",calc_total_p2:"Total:",order_btn:"Order now",
-  p5_tag:"⚡ Reservation — harvest from Sept 15",p5_title:"Assiane Dates",
+  p5_tag:"⚡ On demand — harvest in progress",p5_title:"Assiane Dates",
   p5_desc:"A light, sweet and melting date, much loved by connoisseurs. Tender texture, honeyed taste — perfect with tea or as a healthy snack for the whole family.",
   p3_unit:"MAD / kg",
   calc_label_p3:"Choose your quantity:",calc_total_p3:"Total:",order_btn2:"🔥 Reserve now",
-  p4_tag:"⚡ Reservation — harvest from Sept 15",p4_title:"Majhoul dates",
+  p4_tag:"⚡ On demand — harvest in progress",p4_title:"Majhoul dates",
   p4_desc:"The famous Medjool: large brown date, fleshy and caramel-like. Choose your quality: standard for everyday, or Premium grand calibre — XXL dates selected one by one, the date for occasions and impressive gifts.",
   p4_unit:"MAD / kg",
   mj_q1:"Standard",mj_q2:"Premium grand calibre",
   calc_label_p4:"Choose your quantity:",calc_total_p4:"Total:",order_btn3:"🔥 Reserve now",
-  p5_tag:"⚡ Reservation — harvest from Sept 15",p5_title:"Majhoul Premium",
+  p5_tag:"⚡ On demand — harvest in progress",p5_title:"Majhoul Premium",
   p5_desc:"The grand calibre of Medjool: XXL dates, ultra-fleshy and glossy, selected one by one. The date for occasions and impressive gifts.",
   p5_unit:"MAD / kg",
   calc_label_p5:"Choose your quantity:",calc_total_p5:"Total:",order_btn4:"Order now",
   calc_save:"You save {save} MAD",
   why_kicker:"✦ The benefits",why_title:"Why do people choose Aziza?",
   proc_kicker:"✦ The special Aziza treatment",proc_title:"Why Aziza is worth its price",
-  proc_sub:"Harvest end of September — 1st quality and 2nd premium quality. This is how Morocco's rarest date is born.",
+  proc_sub:"Harvest not started yet — 1st and 2nd quality. This is how Morocco's rarest date is born.",
   st1_t:"We cover it for 2 to 3 weeks",st1_p:"Before harvest, every bunch is covered and protected for 2 to 3 weeks. The date keeps ripening quietly on its stem.",
   st2_t:"It ripens hanging on its bunch",st2_p:"Then we hang it: Aziza finishes ripening naturally on its bunch (arjon), under the oasis sun. No acceleration, no tricks.",
   st3_t:"1st quality, grain by grain",st3_p:"For the first quality, each date is detached by hand, one by one. Long, meticulous work — and that is exactly why it is unique.",
@@ -777,9 +795,9 @@ en:{
   w5_t:"Always award-winning",w5_p:"First places at international exhibitions — a quality recognized far beyond Morocco.",
   fru_title:"Aziza: fruit sugar, not glucose",
   fru_p:"Aziza contains fructose — the natural sugar of fruits — not glucose. That's why it is much loved by people with mild diabetes and by the elderly, who can enjoy it with pleasure and peace of mind.",
-  cta_flash:"⚡ RESERVATIONS OPEN — HARVEST END OF SEPTEMBER",
+  cta_flash:"⚡ ON DEMAND — HARVEST IN PROGRESS",
   cta_title:"Reserve your Aziza before everyone else",
-  cta_sub:"⚠️ Reservations start now — harvest begins end of September. 90% is already promised to our loyal customers, year after year. Reserve today to receive your dates fresh, right from the harvest — our trust and reputation, you have seen them for years, and our customers never leave us.",
+  cta_sub:"⚠️ Reservations start now — the harvest has not started yet. 90% is already promised to our loyal customers, year after year. Reserve today to receive your dates fresh, right from the harvest — our trust and reputation, you have seen them for years, and our customers never leave us.",
   cta_btn:"🔥 Reserve now",
   form_title:"Reserve in 30 seconds",
   form_sub:"Fill in your details and we'll call you to confirm. <b>Cash on delivery.</b>",
@@ -807,7 +825,7 @@ en:{
   th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
 },
 es:{
-  up_t:"¿Y si añades Aziza?",up_p:"El dátil más raro de Marruecos — cosecha fin de septiembre. 90% ya reservado.",up_b1:"Aziza 1ª calidad",up_b2:"Aziza 2ª premium",
+  up_t:"¿Y si añades Aziza?",up_p:"El dátil más raro de Marruecos — la cosecha aún no ha empezado. Resérvalo: te llamamos en cuanto empecemos.",up_b1:"Aziza 1ª calidad",up_b2:"Aziza 2ª premium",
   topbar:"🚚 Entrega gratis desde 2 kg — Pago contra entrega",
   nav_figuig:"Figuig",nav_products:"Nuestros dátiles",nav_why:"¿Por qué Aziza?",nav_order:"Reservar Aziza",
   hero_badge:"✦ Directamente de los oasis de Figuig",
@@ -832,10 +850,10 @@ es:{
   prod_kicker:"✦ Nuestros dátiles",prod_title:"Lo mejor de Figuig",
   prod_sub:"Cuatro variedades, una misma exigencia: lo natural absoluto del oasis.",
   az_flash:"⚡ RESERVA ABIERTA",az_title:"Dátiles Aziza",
-  az_note:'📅 <b>Cosecha: finales de septiembre.</b> Tratamiento especial y cantidad muy limitada. <b>El 90% de la cosecha ya está reservada</b> por nuestros clientes fieles cada año. Reserva ahora para no perderte nada — sobre todo la primera calidad.',
+  az_note:'📅 <b>Cosecha: aún no empezada.</b> Tratamiento especial y cantidad muy limitada. <b>El 90% de la cosecha ya está reservada</b> por nuestros clientes fieles cada año. Reserva ahora para no perderte nada — sobre todo la primera calidad.',
   az_t1:"1ª calidad",az_t1s:"La más rara, grano a grano",
-  az_t2:"2ª calidad premium",az_t2s:"El mismo dátil excepcional",
-  az_q1:"1ª calidad",az_q2:"2ª premium",
+  az_t2:"2ª calidad",az_t2s:"Mismo origen, calibre menor",
+  az_q1:"1ª calidad",az_q2:"2ª estándar",
   kg:"MAD/kg",kg2:"MAD/kg",
   calc_label_az:"Cantidad (1ª calidad):",calc_total_az:"Total:",
   az_btn:"🔥 Reservar mi pedido",
@@ -843,23 +861,23 @@ es:{
   p2_desc:"Los dátiles de cada día: oscuros, carnosos y bien dulces, a buen precio. Ideales para la familia, la cocina, los batidos y el ramadán. Mismo origen, mismo cuidado — precio suave.",
   p2_unit:"MAD / kg",
   calc_label_p2:"Elige tu cantidad:",calc_total_p2:"Total:",order_btn:"Pedir ahora",
-  p5_tag:"⚡ Reserva — cosecha desde el 15 sept.",p5_title:"Dátiles Assiane",
+  p5_tag:"⚡ Bajo pedido — cosecha en curso",p5_title:"Dátiles Assiane",
   p5_desc:"Un dátil claro, dulce y fundente, muy apreciado por los conocedores. Textura tierna, sabor meloso — perfecto con té o como snack saludable para toda la familia.",
   p3_unit:"MAD / kg",
   calc_label_p3:"Elige tu cantidad:",calc_total_p3:"Total:",order_btn2:"🔥 Reservar",
-  p4_tag:"⚡ Reserva — cosecha desde el 15 sept.",p4_title:"Dátiles Majhoul",
+  p4_tag:"⚡ Bajo pedido — cosecha en curso",p4_title:"Dátiles Majhoul",
   p4_desc:"El famoso Medjool: dátil grande marrón, carnoso y acaramelado. Elige tu calidad: estándar para el día a día, o Premium gran calibre — dátiles XXL seleccionados uno a uno, el dátil de las ocasiones y los regalos que impresionan.",
   p4_unit:"MAD / kg",
   mj_q1:"Estándar",mj_q2:"Premium gran calibre",
   calc_label_p4:"Elige tu cantidad:",calc_total_p4:"Total:",order_btn3:"🔥 Reservar",
-  p5_tag:"⚡ Reserva — cosecha desde el 15 sept.",p5_title:"Majhoul Premium",
+  p5_tag:"⚡ Bajo pedido — cosecha en curso",p5_title:"Majhoul Premium",
   p5_desc:"El gran calibre del Medjool: dátiles XXL, ultra-carnosos y brillantes, seleccionados uno a uno. El dátil de las ocasiones y los regalos que impresionan.",
   p5_unit:"MAD / kg",
   calc_label_p5:"Elige tu cantidad:",calc_total_p5:"Total:",order_btn4:"Pedir ahora",
   calc_save:"Ahorras {save} MAD",
   why_kicker:"✦ Los beneficios",why_title:"¿Por qué la gente elige Aziza?",
   proc_kicker:"✦ El tratamiento especial Aziza",proc_title:"Por qué Aziza vale su precio",
-  proc_sub:"Cosecha a mediados de septiembre — 1ª calidad y 2ª calidad premium. Así nace el dátil más raro de Marruecos.",
+  proc_sub:"Cosecha aún no empezada — 1ª y 2ª calidad. Así nace el dátil más raro de Marruecos.",
   st1_t:"La cubrimos 2 a 3 semanas",st1_p:"Antes de la cosecha, cada racimo se cubre y se protege durante 2 a 3 semanas. El dátil sigue madurando tranquilamente en su palma.",
   st2_t:"Madura colgada, en su racimo",st2_p:"Luego la colgamos: Aziza termina su maduración naturalmente en su racimo (arjon), bajo el sol del oasis. Sin aceleración, sin trucos.",
   st3_t:"La 1ª calidad, grano a grano",st3_p:"Para la primera calidad, cada dátil se desprende a mano, uno por uno. Un trabajo largo y minucioso — y por eso exactamente es única.",
@@ -872,9 +890,9 @@ es:{
   w5_t:"Siempre premiada",w5_p:"Primeros puestos en exposiciones internacionales — una calidad reconocida más allá de Marruecos.",
   fru_title:"Aziza: azúcar de fruta, no glucosa",
   fru_p:"Aziza contiene fructosa — el azúcar natural de las frutas — y no glucosa. Por eso es muy apreciada por las personas con diabetes leve y por las personas mayores, que pueden disfrutarla con placer y tranquilidad.",
-  cta_flash:"⚡ RESERVAS ABIERTAS — COSECHA FINALES DE SEPTIEMBRE",
+  cta_flash:"⚡ BAJO PEDIDO — COSECHA EN CURSO",
   cta_title:"Reserva tu Aziza antes que todos",
-  cta_sub:"⚠️ Las reservas empiezan ahora — la cosecha comienza a finales de septiembre. El 90% ya está prometido a nuestros clientes fieles, año tras año. Reserva hoy para recibir tus dátiles frescos, directos de la cosecha — nuestra confianza y reputación las ves desde hace años, y nuestros clientes nunca nos dejan.",
+  cta_sub:"⚠️ Las reservas empiezan ahora — la cosecha aún no ha empezado. El 90% ya está prometido a nuestros clientes fieles, año tras año. Reserva hoy para recibir tus dátiles frescos, directos de la cosecha — nuestra confianza y reputación las ves desde hace años, y nuestros clientes nunca nos dejan.",
   cta_btn:"🔥 Reservar ahora",
   form_title:"Reserva en 30 segundos",
   form_sub:"Rellena tus datos y te llamamos para confirmar. <b>Pago contra entrega.</b>",
@@ -1002,19 +1020,49 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
     alert(msgs[lang]||msgs.fr);
     return;
   }
+  let phoneDigits=phone.replace(/\D/g,'');
+  if(phoneDigits.startsWith('212')) phoneDigits='0'+phoneDigits.slice(3);
+  const langV=document.documentElement.lang||'fr';
+  if(!/^0[67]\d{8}$/.test(phoneDigits)){
+    const msgP={fr:'⚠️ Numéro de téléphone invalide. Entrez un numéro marocain valide (ex : 0612345678).',ar:'⚠️ رقم الهاتف غير صحيح. أدخل رقمًا مغربيًا صحيحًا (مثال: 0612345678).',en:'⚠️ Invalid phone number. Enter a valid Moroccan number (e.g. 0612345678).',es:'⚠️ Número de teléfono no válido. Introduce un número marroquí válido (ej.: 0612345678).'};
+    alert(msgP[langV]||msgP.fr);
+    return;
+  }
+  if(name.length<3||!/\p{L}/u.test(name)){
+    const msgN={fr:'⚠️ Veuillez entrer votre vrai nom complet.',ar:'⚠️ يرجى إدخال اسمك الكامل الحقيقي.',en:'⚠️ Please enter your real full name.',es:'⚠️ Por favor, introduce tu nombre completo real.'};
+    alert(msgN[langV]||msgN.fr);
+    return;
+  }
+  if(city.length<2||!/\p{L}/u.test(city)||addr.length<5){
+    const msgA={fr:'⚠️ Veuillez entrer une ville et une adresse complètes.',ar:'⚠️ يرجى إدخال المدينة والعنوان الكامل.',en:'⚠️ Please enter a valid city and full address.',es:'⚠️ Por favor, introduce una ciudad y una dirección completas.'};
+    alert(msgA[langV]||msgA.fr);
+    return;
+  }
+  const orderKey='tg-order-'+prodName.replace(/[^a-zA-Z0-9]/g,'')+'-'+phoneDigits;
+  const lastOrder=parseInt(localStorage.getItem(orderKey)||'0',10);
+  if(lastOrder && Date.now()-lastOrder < 6*3600*1000){
+    const lang2=document.documentElement.lang||'fr';
+    const msgs2={fr:'✅ Votre commande a déjà été envoyée ! Nous vous appellerons très vite pour confirmer — pas besoin de la renvoyer. 🌴',ar:'✅ تم إرسال طلبك بالفعل! سنتصل بك قريبًا للتأكيد — لا حاجة لإعادة الإرسال. 🌴',en:'✅ Your order has already been sent! We will call you soon to confirm — no need to resend. 🌴',es:'✅ ¡Tu pedido ya fue enviado! Te llamaremos muy pronto para confirmar — no hace falta reenviarlo. 🌴'};
+    alert(msgs2[lang2]||msgs2.fr);
+    return;
+  }
+  if(window.__orderSent){return;}
+  window.__orderSent=true;
+  localStorage.setItem(orderKey,String(Date.now()));
+  const submitBtn=e.target.querySelector('button[type="submit"],button');
+  if(submitBtn){submitBtn.disabled=true;submitBtn.style.opacity='.6';submitBtn.style.pointerEvents='none';}
   const qty=document.getElementById('qty').value;
   const total=document.getElementById('totalValue').textContent;
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
-  const SHEET_URL='https://script.google.com/macros/s/AKfycbwyTUKrM92ECg2a1Z_3JGowyutUuSo5mKzdwq0LHyektzKG4QmoeqirKdw5qX0rfiZg/exec';
+  const SHEET_URL='https://script.google.com/macros/s/AKfycbx2qKfvKK0JEuItfTAqQGIcdROA617yV02Q2Y_XFP7SrrfMhPqW4TWPZccJtgkhkK9s/exec';
   let iframe=document.getElementById('sheetFrame');
   if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
   const f=document.createElement('form');
   f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
   const data={name:name,phone:"'"+phone,city:city,address:addr,product:prodName,qty:qty,total:total};
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
-  try{fbq('track','Purchase',{value:parseFloat(String(total).replace(/[^0-9.]/g,''))||0,currency:'MAD',content_name:prodName});}catch(err){}
   document.body.appendChild(f);f.submit();
-  setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);
+  window.location.href='merci.html?'+params.toString();
 });
 </script>
 </body>

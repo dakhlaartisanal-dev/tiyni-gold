@@ -870,7 +870,7 @@ function quickAziza(tier){
   const prodSheet=prodName+' [UPSELL — après '+firstProdParam+' '+firstQtyParam+' kg]';
   const data={name:name,phone:"'"+phone,city:city,product:prodSheet,qty:qty,total:total};
   for(const k in data){const inp=document.createElement('input');inp.name=k;inp.value=data[k];f.appendChild(inp);}
-  const evId='tg-'+(q.get('ph')||'').replace(/\D/g,'')+'-'+(q.get('p')||'reservation');try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName},{eventID:evId});}catch(err){}
+  try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName});}catch(err){}
   document.body.appendChild(f);f.submit();
   document.getElementById('upsellZone').hidden=true;
   const firstProd=q.get('p')||'';

@@ -1002,6 +1002,17 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
     alert(msgs[lang]||msgs.fr);
     return;
   }
+  const phoneDigits=phone.replace(/\D/g,'');
+  const orderKey='tg-order-'+phoneDigits;
+  const lastOrder=localStorage.getItem(orderKey);
+  if(lastOrder && Date.now()-parseInt(lastOrder)<6*3600*1000){
+    const lang=document.documentElement.lang||'fr';
+    const dupMsgs={fr:'Votre commande a déjà été envoyée ! Nous vous appellerons très vite pour confirmer — pas besoin de la renvoyer.',ar:'تم إرسال طلبك بالفعل! سنتصل بك قريبًا للتأكيد — لا حاجة لإعادة الإرسال.',en:'Your order has already been sent! We will call you soon to confirm — no need to resend.',es:'¡Su pedido ya ha sido enviado! Le llamaremos pronto para confirmar — no es necesario reenviar.'};
+    alert(dupMsgs[lang]||dupMsgs.fr);
+    return;
+  }
+  document.querySelector('#orderForm button[type="submit"]').disabled=true;
+  const qty=document.getElementById('qty').value;
   const qty=document.getElementById('qty').value;
   const total=document.getElementById('totalValue').textContent;
   const params=new URLSearchParams({p:prodName,q:qty,t:total,n:name,ph:phone,c:city});
@@ -1014,7 +1025,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   for(const k in data){const i=document.createElement('input');i.name=k;i.value=data[k];f.appendChild(i);}
   try{fbq('track','Purchase',{value:parseFloat(String(total).replace(/[^0-9.]/g,''))||0,currency:'MAD',content_name:prodName});}catch(err){}
   document.body.appendChild(f);f.submit();
-  setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);
+  localStorage.setItem(orderKey,Date.now().toString());setTimeout(function(){window.location.href='merci.html?'+params.toString();},1500);
 });
 </script>
 </body><script>(function(){if(location.hash==='#order'){setTimeout(function(){var el=document.getElementById('order');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},400);}})();</script>

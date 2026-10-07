@@ -986,7 +986,7 @@ function orderTotal(){
 }
 function renderTotal(){
   const t=orderTotal();
-  totalValueEl.textContent=t.total+' DH';
+  totalValueEl.textContent=Math.round(t.total)+' DH';
   const detail=(T[curLang].f_detail||'{qty} kg × {rate} DH/kg').replace('{qty}',t.qty).replace('{rate}',t.rate);
   const delivText=(t.delivery>0)?' + '+t.delivery+' DH livraison':' — Livraison gratuite';
   document.getElementById('totalDetail').textContent=detail+delivText;

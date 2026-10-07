@@ -980,7 +980,7 @@ function orderTotal(){
 }
 function renderTotal(){
   const t=orderTotal();
-  totalValueEl.textContent=t.total+' DH';
+  totalValueEl.textContent=Math.round(t.total)+' DH';
   document.getElementById('totalDetail').textContent=(T[curLang].f_detail||'{qty} kg × {rate} DH/kg').replace('{qty}',t.qty).replace('{rate}',t.rate);
   totalSaveEl.hidden=true;
 }

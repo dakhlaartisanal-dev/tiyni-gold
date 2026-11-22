@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">Tiyni Gold — Dattes Aziza de Figuig</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌴%3C/text%3E%3C/svg%3E">
+<title>Tiyni Gold — Dattes Aziza de Figuig</title>
 <meta name="description"<link rel="canonical" href="merci.html"> content="Dattes Aziza, Assiane et Majhoul des oasis de Figuig. 100% naturelles, zéro traitement, zéro pesticide. Réservation Aziza ouverte — récolte fin septembre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
@@ -391,6 +392,42 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2802488139911279&ev=PageView&noscript=1"/></noscript>
 <!-- End Meta Pixel -->
+<!-- TikTok Pixel -->
+<script>
+!function(w,d,t){
+  w.TiktokAnalyticsObject=t;
+  var ttq=w[t]=w[t]||[];
+  ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+  ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+  for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+  ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+  ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+  ttq.load('DBCJK0RC77U4J2JQ951G');
+  ttq.page();
+  var tiyniProducts={
+    'aziza.html':{name:'Dattes Aziza',id:'aziza-001',value:250},
+    'assiane.html':{name:'Dattes Assiane',id:'assiane-001',value:89},
+    'majhoul.html':{name:'Dattes Majhoul',id:'majhoul-001',value:169}
+  };
+  var tiyniFile=location.pathname.split('/').pop()||'index.html';
+  if(tiyniProducts[tiyniFile]){
+    var tp=tiyniProducts[tiyniFile];
+    ttq.track('ViewContent',{content_type:'product',content_name:tp.name,content_id:tp.id,currency:'MAD',value:tp.value});
+  }else if(tiyniFile==='index.html'){
+    ttq.track('ViewContent',{content_type:'product',content_name:'Tiyni Gold',content_id:'tiyni-gold',currency:'MAD',value:1});
+  }
+}(window,document,'ttq');
+</script>
+<!-- End TikTok Pixel -->
+<script>
+(function(){
+  var url=window.location.href;
+  if(url.indexOf('\u2060')!==-1||url.indexOf('%E2%81%A0')!==-1){
+    var cleanUrl=url.replace(/\u2060/g,'').replace(/%E2%81%A0/g,'');
+    window.location.replace(cleanUrl);
+  }
+})();
+</script>
 </head>
 
 
@@ -401,7 +438,7 @@ fbq('track', 'PageView');
     <a href="index.html#origin" data-i18n="nav_figuig">Figuig</a>
     <a href="index.html#products" data-i18n="nav_products">Nos dattes</a>
     <a href="index.html#why" data-i18n="nav_why">Pourquoi Aziza ?</a>
-    <a href="#order" class="btn btn-sm" data-i18n="nav_order">Réserver Aziza</a>
+    <a href="aziza.html#order" class="btn btn-sm" data-i18n="nav_order">Réserver Aziza</a>
   </div>
   <div class="lang-switch">
     <button data-lang="fr" class="active">FR</button>
@@ -423,13 +460,12 @@ fbq('track', 'PageView');
       <p id="upP" style="opacity:.85;margin:0 0 16px"></p>
       <div style="margin-bottom:14px">
         <select id="upQty" style="padding:10px 18px;border-radius:10px;background:#0d0a07;color:#e8d9b0;border:1px solid #c9a227;font-size:1rem">
-          <option value="2">2 kg</option><option value="4">4 kg</option>
-          <option value="6">6 kg</option><option value="8">8 kg</option><option value="10">10 kg</option>
+          <option value="3" selected>3 kg</option><option value="6">6 kg</option><option value="9">9 kg</option><option value="10">10 kg</option><option value="12">12 kg</option>
         </select>
       </div>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <button id="upB1" class="btn btn-sm" onclick="quickAziza(1)">Aziza 1ère qualité</button>
-        <button id="upB2" class="btn btn-outline btn-sm" onclick="quickAziza(2)">Aziza 2ème premium</button>
+        <button id="upB2" class="btn btn-outline btn-sm" onclick="quickAziza(2)">Aziza 2ème qualité</button>
       </div>
           </div>
     <div id="recapZone" hidden style="margin-top:24px;text-align:left;background:#131008;border:1px solid rgba(201,162,39,.4);border-radius:14px;padding:20px 22px">
@@ -442,11 +478,11 @@ fbq('track', 'PageView');
   </div>
 </section>
 <footer>
-  <a class="logo" href="#">Tiyni <b>Gold</b></a>
+  <a class="logo" href="index.html">Tiyni <b>Gold</b></a>
   <p data-i18n="footer_p1">Dattes authentiques des oasis de Figuig 🇲🇦 — de l'oasis à votre porte</p>
   <p style="margin-top:8px" data-i18n="footer_p2">© 2026 Tiyni Gold — Tous droits réservés</p>
 </footer>
-<a class="wa-float" href="https://wa.me/212613043469" target="_blank" aria-label="WhatsApp">
+<a rel="noopener noreferrer" class="wa-float" href="https://wa.me/212613043469" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.9 7.5.9 15.9c0 2.7.7 5.3 2 7.6L.8 32l8.7-2.1c2.2 1.2 4.7 1.9 7.2 1.9 8.4 0 15.1-6.7 15.1-15.1S24.4.8 16 .8zm0 27.6c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-5.2 1.3 1.3-5-.3-.5c-1.2-1.9-1.9-4.1-1.9-6.4C3 9.1 8.9 3.2 16 3.2S29 9.1 29 15.9 23.1 28.4 16 28.4zm8.3-9.4c-.5-.2-2.7-1.3-3.1-1.5-.4-.1-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-.5-.2-1.9-.7-3.7-2.3-1.4-1.2-2.3-2.7-2.6-3.2-.3-.5 0-.7.2-1l.7-.8c.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8-.1-.2-1-2.4-1.4-3.3-.4-.9-.7-.7-1-.8h-.9c-.3 0-.8.1-1.2.6-.4.5-1.6 1.5-1.6 3.7s1.6 4.3 1.9 4.6c.2.3 3.2 4.9 7.8 6.9 1.1.5 1.9.7 2.6.9 1.1.3 2.1.3 2.9.2.9-.1 2.7-1.1 3.1-2.2.4-1.1.4-2 .3-2.2-.1-.2-.5-.3-1-.6z"/></svg>
 </a>
 
@@ -455,7 +491,7 @@ fbq('track', 'PageView');
 <script>
 const T = {
 fr:{
-  recap_t:"📋 Récapitulatif de vos réservations",recap_note:"Paiement à la livraison — on vous appellera pour tout confirmer. Majhoul/Assiane : livraison dès maintenant. Aziza : dès la récolte fin septembre.",recap_total:"Total : {total} DH — livraison gratuite",up_harvest:"livraison après la récolte d’Aziza, fin septembre",
+  recap_t:"📋 Récapitulatif de vos réservations",recap_note:"Paiement à la livraison — on vous appellera pour tout confirmer. Majhoul/Assiane : livraison dès maintenant. Aziza : dès la récolte fin septembre.",recap_total:"Total : {total} DH — livraison gratuite",up_harvest:"livraison sous 24-48h",
   topbar:"🚚 Livraison gratuite dès 3 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -542,12 +578,12 @@ fr:{
   footer_p1:"Dattes authentiques des oasis de Figuig 🇲🇦 — de l'oasis à votre porte",
   footer_p2:"© 2026 Tiyni Gold — Tous droits réservés",
   alert:"Merci {name} ! 🌴\nNous avons reçu votre réservation, nous vous appellerons bientôt pour confirmer.\nPaiement à la livraison.",
-  f_total:"Total à payer :",th_title:"Merci {name} ! 🌴",
+  f_total:"Total à payer :",th_title:"Commande confirmée 🌴",
   th_order:"Votre commande : {product} — {qty} kg",
   th_total:"Total à payer : {total} DH",
-  th_msg:"Votre réservation est bien reçue. On vous appellera très vite pour confirmer — paiement à la livraison, livraison gratuite dès 3 kg partout au Maroc. 🚚",
-  th_msg_az:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte d'Aziza commence fin septembre, on vous appellera pour confirmer ensemble la quantité exacte et la livraison. Paiement à la livraison, gratuite dès 3 kg partout au Maroc. 🌴",
-  th_msg_other:"Votre réservation est bien reçue. Incha'Allah, dès que la récolte commence (dès maintenant), on vous appellera pour confirmer ensemble la quantité exacte. Et si vous voulez aussi réserver de l'Aziza, dites-le-nous à l'appel — on vous gardera votre part, incha'Allah. 🌴"
+  th_msg:"Votre commande est enregistrée. Notre équipe vous contactera sous 24h pour confirmer la livraison. Paiement à la livraison — livraison gratuite dès 3 kg. 🚚",
+  th_msg_az:"Votre commande Aziza est enregistrée. Notre équipe vous contactera sous 24h pour confirmer la livraison. Paiement à la livraison — livraison gratuite dès 3 kg partout au Maroc. 🌴",
+  th_msg_other:"Votre commande est enregistrée. Notre équipe vous contactera sous 24h pour confirmer la livraison. Paiement à la livraison — livraison gratuite dès 3 kg. 🌴"
 },
 ar:{
   recap_t:"📋 ملخص حجوزاتك",recap_note:"الدفع عند الاستلام — سنتصل بك لتأكيد كل شيء. مجهول/العصيان: التوصيل من الآن. أزيزا: بعد الحصاد آخر شتنبر.",recap_total:"المجموع : {total} درهم — التوصيل مجاني",up_harvest:"التوصيل بعد حصاد أزيزا، آخر شتنبر",
@@ -637,12 +673,12 @@ ar:{
   footer_p1:"تمور أصيلة من واحات فيجيج 🇲🇦 — من الواحة إلى باب منزلك",
   footer_p2:"© 2026 Tiyni Gold — جميع الحقوق محفوظة",
   alert:"شكراً {name}! 🌴\nتوصلنا بحجزك، سنتصل بك قريباً للتأكيد.\nالدفع عند الاستلام.",
-  f_total:"المجموع الواجب أداؤه :",th_title:"شكراً {name}! 🌴",
+  f_total:"المجموع الواجب أداؤه :",th_title:"تم تأكيد الطلب 🌴",
   th_order:"طلبك : {product} — {qty} كغ",
   th_total:"المجموع الواجب أداؤه : {total} درهم",
-  th_msg:"توصلنا بحجزك بنجاح. سنتصل بك قريباً جداً للتأكيد — الدفع عند الاستلام، والتوصيل مجاني ابتداءً من 2 كغ في جميع أنحاء المغرب. 🚚",
-  th_msg_az:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ حصاد أزيزا نهاية شتنبر، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط والتوصيل. الدفع عند الاستلام، والتوصيل مجاني من 2 كغ فجميع أنحاء المغرب. 🌴",
-  th_msg_other:"توصلنا بحجزك بنجاح. إن شاء الله، ملي يبدأ الحصاد (ابتداءً من 15 شتنبر)، غادي نعيطو ليك باش نأكدو معاك الكمية بالضبط. وإلا بغيتي تحجز أزيزا حتى نتا، قولها لينا فالتليفون — غادي نحافظو ليك على نصيبك إن شاء الله. 🌴"
+  th_msg:"تم تسجيل طلبك. سيتصل بك فريقنا خلال 24 ساعة لتأكيد التوصيل. الدفع عند الاستلام — التوصيل مجاني من 3 كغ. 🚚",
+  th_msg_az:"تم تسجيل طلب أزيزا. سيتصل بك فريقنا خلال 24 ساعة لتأكيد التوصيل. الدفع عند الاستلام — التوصيل مجاني من 3 كغ فجميع أنحاء المغرب. 🌴",
+  th_msg_other:"تم تسجيل طلبك. سيتصل بك فريقنا خلال 24 ساعة لتأكيد التوصيل. الدفع عند الاستلام — التوصيل مجاني من 3 كغ. 🌴"
 },
 en:{
   recap_t:"📋 Your reservation summary",recap_note:"Cash on delivery — we will call you to confirm everything. Majhoul/Assiane: delivery now. Aziza: after the harvest, late September.",recap_total:"Total: {total} MAD — free delivery",up_harvest:"delivery after the Aziza harvest, late September",
@@ -732,12 +768,12 @@ en:{
   footer_p1:"Authentic dates from the Figuig oases 🇲🇦 — from the oasis to your door",
   footer_p2:"© 2026 Tiyni Gold — All rights reserved",
   alert:"Thank you {name}! 🌴\nWe received your reservation, we'll call you soon to confirm.\nCash on delivery.",
-  f_total:"Total to pay:",th_title:"Thank you {name}! 🌴",
+  f_total:"Total to pay:",th_title:"Order confirmed 🌴",
   th_order:"Your order: {product} — {qty} kg",
   th_total:"Total to pay: {total} DH",
-  th_msg:"Your reservation is confirmed. We'll call you very soon — cash on delivery, free shipping from 3 kg everywhere in Morocco. 🚚",
-  th_msg_az:"Your reservation is confirmed. Incha'Allah, as soon as the Aziza harvest begins end of September, we will call you to confirm the exact quantity and delivery together. Cash on delivery, free shipping from 3 kg everywhere in Morocco. 🌴",
-  th_msg_other:"Your reservation is confirmed. Incha'Allah, as soon as the harvest begins (from September 15), we will call you to confirm the exact quantity together. And if you'd also like to reserve Aziza, just tell us on the call — we'll keep your share for you, incha'Allah. 🌴"
+  th_msg:"Your order has been placed. Our team will contact you within 24h to confirm delivery. Cash on delivery — free shipping from 3 kg. 🚚",
+  th_msg_az:"Your Aziza order has been placed. Our team will contact you within 24h to confirm delivery. Cash on delivery — free shipping from 3 kg everywhere in Morocco. 🌴",
+  th_msg_other:"Your order has been placed. Our team will contact you within 24h to confirm delivery. Cash on delivery — free shipping from 3 kg. 🌴"
 },
 es:{
   recap_t:"📋 Resumen de tus reservas",recap_note:"Pago contra entrega — te llamaremos para confirmar todo. Majhoul/Assiane: entrega desde ahora. Aziza: tras la cosecha, finales de septiembre.",recap_total:"Total: {total} MAD — entrega gratuita",up_harvest:"entrega tras la cosecha de Aziza, finales de septiembre",
@@ -827,12 +863,12 @@ es:{
   footer_p1:"Dátiles auténticos de los oasis de Figuig 🇲🇦 — del oasis a tu puerta",
   footer_p2:"© 2026 Tiyni Gold — Todos los derechos reservados",
   alert:"¡Gracias {name}! 🌴\nRecibimos tu reserva, te llamaremos pronto para confirmar.\nPago contra entrega.",
-  f_total:"Total a pagar:",th_title:"¡Gracias {name}! 🌴",
+  f_total:"Total a pagar:",th_title:"Pedido confirmado 🌴",
   th_order:"Tu pedido: {product} — {qty} kg",
   th_total:"Total a pagar: {total} DH",
-  th_msg:"Tu reserva ha sido recibida. Te llamaremos muy pronto para confirmar — pago contra entrega, envío gratis desde 3 kg en todo Marruecos. 🚚",
-  th_msg_az:"Tu reserva ha sido recibida. Incha'Allah, en cuanto empiece la cosecha de Aziza a finales de septiembre, te llamaremos para confirmar juntos la cantidad exacta y la entrega. Pago contra entrega, envío gratis desde 3 kg en todo Marruecos. 🌴",
-  th_msg_other:"Tu reserva ha sido recibida. Incha'Allah, en cuanto empiece la cosecha (desde el 15 de septiembre), te llamaremos para confirmar juntos la cantidad exacta. Y si también quieres reservar Aziza, dínoslo en la llamada — te guardaremos tu parte, incha'Allah. 🌴"
+  th_msg:"Tu pedido ha sido registrado. Nuestro equipo te contactará en 24h para confirmar la entrega. Pago contra entrega — envío gratis desde 3 kg. 🚚",
+  th_msg_az:"Tu pedido de Aziza ha sido registrado. Nuestro equipo te contactará en 24h para confirmar la entrega. Pago contra entrega — envío gratis desde 3 kg en todo Marruecos. 🌴",
+  th_msg_other:"Tu pedido ha sido registrado. Nuestro equipo te contactará en 24h para confirmar la entrega. Pago contra entrega — envío gratis desde 3 kg. 🌴"
 }
 };
 const L=T[localStorage.getItem('tg-lang')||'fr'];
@@ -842,36 +878,86 @@ const qty=q.get('q')||'2';
 let total=q.get('t')||'';
 total=total.replace(/\s*(dh|درهم|مغربي)\s*/i,'');
 const name=q.get('n')||'';
-document.getElementById('thanksTitle').textContent=(L.th_title||'Réservation confirmée').replace('{name}',name);
+document.getElementById('thanksTitle').textContent=(L.th_title||'Commande confirmée').replace('{name}',name);
 document.getElementById('thanksOrder').textContent=prod+' — '+qty+' kg';
 document.getElementById('thanksTotal').textContent=(L.th_total||'Total : {total}').replace('{total}',total);
 const isAz=/aziza|أزيزا/i.test(prod);
 document.getElementById('thanksMsg').textContent=isAz?(L.th_msg_az||''):(L.th_msg_other||'');
-try{fbq('track','Lead',{content_name:q.get('p')||'reservation'});}catch(err){}
-if(!isAz){
+const phone=q.get('ph')||'';
+const phoneClean=phone.replace(/\D/g,'');
+const purchaseValue=parseFloat(String(total).replace(/[^0-9.]/g,''))||0;
+const cityAM=q.get('c')||'';
+try{
+  if(phoneClean){
+    const _phAM=phoneClean.charAt(0)==='0'?'212'+phoneClean.slice(1):phoneClean;
+    const _nm=name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().split(/\s+/).filter(Boolean);
+    fbq('init','2802488139911279',{ph:_phAM,fn:_nm[0]||'',ln:_nm.slice(1).join(' ')||'',ct:cityAM.toLowerCase().trim(),country:'ma'});
+  }
+}catch(err){}
+if(prod&&phoneClean&&purchaseValue>0){
+  const phKey='purchased_'+phoneClean;
+  let prevPurch=0;
+  try{prevPurch=parseInt(localStorage.getItem(phKey)||'0',10);}catch(err){}
+  if(!prevPurch||(Date.now()-prevPurch)>86400000){
+    const purchaseEventId='purchase_'+phoneClean;
+    try{fbq('track','Purchase',{value:purchaseValue,currency:'MAD',content_name:prod,content_id:'tiyni-order',phone:phoneClean},{eventID:purchaseEventId});}catch(err){}
+    try{ttq.track('Purchase',{value:purchaseValue,currency:'MAD',content_name:prod,content_id:'tiyni-order'});}catch(err){}
+    try{localStorage.setItem(phKey,String(Date.now()));}catch(err){}
+  }
+}
+if(!isAz&&phoneClean){
   document.getElementById('upsellZone').hidden=false;
   document.getElementById('upT').textContent=L.up_t||'';
   document.getElementById('upP').textContent=L.up_p||'';
   document.getElementById('upB1').textContent=L.up_b1||'Aziza 1ère qualité';
-  document.getElementById('upB2').textContent=L.up_b2||'Aziza 2ème premium';
+  document.getElementById('upB2').textContent=L.up_b2||'Aziza 2ème qualité';
 }
+function updateUpsellQty(tier){
+  const sel=document.getElementById('upQty');
+  const opts1=[{v:3,t:'3 kg — 690 DH'},{v:6,t:'6 kg — 1350 DH'},{v:10,t:'10 kg — 2100 DH'}];
+  const opts2=[{v:3,t:'3 kg — 450 DH'},{v:6,t:'6 kg — 900 DH'},{v:9,t:'9 kg — 1260 DH'},{v:12,t:'12 kg — 1680 DH'}];
+  const opts=tier===1?opts1:opts2;
+  sel.innerHTML=opts.map(o=>'<option value="'+o.v+'">'+o.t+'</option>').join('');
+}
+document.getElementById('upB1').addEventListener('click',function(){updateUpsellQty(1);});
+document.getElementById('upB2').addEventListener('click',function(){updateUpsellQty(2);});
 function quickAziza(tier){
+  if(window.__upsellSent){return;}
   const name=q.get('n')||'',phone=q.get('ph')||'',city=q.get('c')||'';
+  const phoneClean=phone.replace(/\D/g,'');
   const qty=parseInt(document.getElementById('upQty').value,10);
-  const price=tier===1?250:180;
-  const prodName=tier===1?'Aziza 1ère qualité':'Aziza 2ème qualité premium';
-  const total=qty*price;
+  const totals1={3:690,6:1350,10:2100};
+  const totals2={3:450,6:900,9:1260,12:1680};
+  const totals=tier===1?totals1:totals2;
+  const total=totals[qty]||0;
+  const prodName=tier===1?'Aziza 1ère qualité':'Aziza 2ème qualité';
+  if(!name||!phoneClean||!city||!total){alert('Informations de commande incomplètes.');return;}
+  const storageKey='tiyni_upsell-'+phoneClean+'-'+qty;
+  let lastUpsell=null;
+  try{lastUpsell=localStorage.getItem(storageKey);}catch(err){}
+  if(lastUpsell&&(Date.now()-parseInt(lastUpsell,10))<21600000){
+    alert('Cette commande Aziza a déjà été enregistrée. Notre équipe va vous contacter.');return;
+  }
   const SHEET_URL='https://script.google.com/macros/s/AKfycbwyTUKrM92ECg2a1Z_3JGowyutUuSo5mKzdwq0LHyektzKG4QmoeqirKdw5qX0rfiZg/exec';
   let iframe=document.getElementById('sheetFrame');
-  if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.display='none';document.body.appendChild(iframe);}
+  if(!iframe){iframe=document.createElement('iframe');iframe.name='sheetFrame';iframe.id='sheetFrame';iframe.style.cssText='position:absolute;width:1px;height:1px;left:-9999px;border:0';document.body.appendChild(iframe);}
   const f=document.createElement('form');
   f.method='POST';f.action=SHEET_URL;f.target='sheetFrame';f.style.display='none';
   const firstProdParam=q.get('p')||'',firstQtyParam=q.get('q')||'';
   const prodSheet=prodName+' [UPSELL — après '+firstProdParam+' '+firstQtyParam+' kg]';
-  const data={name:name,phone:"'"+phone,city:city,product:prodSheet,qty:qty,total:total};
+  const data={name:name,phone:"'"+phone,city:city,address:'',product:prodSheet,qty:qty,total:total+' DH'};
   for(const k in data){const inp=document.createElement('input');inp.name=k;inp.value=data[k];f.appendChild(inp);}
-  try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName});}catch(err){}
-  document.body.appendChild(f);f.submit();
+  const srcInput=document.createElement('input');srcInput.type='hidden';srcInput.name='source';srcInput.value=q.get('src')||'Upsell merci';f.appendChild(srcInput);
+  const now=new Date();
+  const dtStr=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')+' '+String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0')+':'+String(now.getSeconds()).padStart(2,'0');
+  const dtInput=document.createElement('input');dtInput.type='hidden';dtInput.name='date';dtInput.value=dtStr;f.appendChild(dtInput);
+  window.__upsellSent=true;
+  try{localStorage.setItem(storageKey,String(Date.now()));}catch(err){}
+  try{document.body.appendChild(f);f.submit();}catch(err){window.__upsellSent=false;alert('Une erreur est survenue. Veuillez réessayer.');return;}
+  const upEventId='purchase_upsell_'+phoneClean+'_'+Date.now();
+  try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName,content_id:tier===1?'aziza-001':'aziza-002',phone:phoneClean},{eventID:upEventId});}catch(err){}
+  try{ttq.track('SubmitForm',{value:total,currency:'MAD',content_name:prodName,content_id:'aziza-001'});}catch(err){}
+  try{ttq.track('Purchase',{value:total,currency:'MAD',content_name:prodName,content_id:'aziza-001'});}catch(err){}
   document.getElementById('upsellZone').hidden=true;
   const firstProd=q.get('p')||'';
   const firstQty=q.get('q')||'';
@@ -882,7 +968,7 @@ function quickAziza(tier){
   line1.textContent='1️⃣ '+firstProd+' — '+firstQty+' kg — '+oldTotal+' DH';
   recap.appendChild(line1);
   const line2=document.createElement('div');
-  line2.innerHTML='2️⃣ '+prodName+' — '+qty+' kg — '+total+' DH &nbsp;<span style="color:#d4af37;font-size:.9rem">('+(L.up_harvest||'livraison après la récolte d\u2019Aziza, fin septembre')+')</span>';
+  line2.innerHTML='2️⃣ '+prodName+' — '+qty+' kg — '+total+' DH &nbsp;<span style="color:#d4af37;font-size:.9rem">('+(L.up_harvest||'livraison sous 24-48h')+')</span>';
   recap.appendChild(line2);
   document.getElementById('recapTotal').textContent=(L.recap_total||'Total : {total} DH — livraison gratuite').replace('{total}',oldTotal+total);
   document.getElementById('recapZone').hidden=false;

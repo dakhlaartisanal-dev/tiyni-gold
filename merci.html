@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌴%3C/text%3E%3C/svg%3E">
 <title>Tiyni Gold — Dattes Aziza de Figuig</title>
-<meta name="description"<link rel="canonical" href="merci.html"> content="Dattes Aziza, Assiane et Majhoul des oasis de Figuig. 100% naturelles, zéro traitement, zéro pesticide. Réservation Aziza ouverte — récolte fin septembre.">
+<meta name="description" content="Dattes Aziza, Assiane et Majhoul des oasis de Figuig. 100% naturelles, zéro traitement, zéro pesticide. Réservation Aziza ouverte — récolte fin septembre.">
+<link rel="canonical" href="https://reservation.tiynigold.com/merci.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -455,18 +456,18 @@ fbq('track', 'PageView');
     <p class="thanks-total" id="thanksTotal"></p>
     <p class="thanks-msg" id="thanksMsg"></p>
     <div id="upsellZone" hidden style="margin-top:28px;padding:24px;background:linear-gradient(160deg,#1a1408,#0d0a07);border:1px solid #c9a227;border-radius:18px">
-      <img src="images/aziza.jpg" alt="Aziza" style="width:100%;max-width:300px;border-radius:12px;margin-bottom:14px">
+      <img src="images/aziza.jpg" alt="Aziza" style="width:100%;max-width:300px;border-radius:12px;margin:0 auto 14px">
       <h3 id="upT" style="color:#d4af37;margin:0 0 8px"></h3>
-      <p id="upP" style="opacity:.85;margin:0 0 16px"></p>
-      <div style="margin-bottom:14px">
-        <select id="upQty" style="padding:10px 18px;border-radius:10px;background:#0d0a07;color:#e8d9b0;border:1px solid #c9a227;font-size:1rem">
-          <option value="3" selected>3 kg</option><option value="6">6 kg</option><option value="9">9 kg</option><option value="10">10 kg</option><option value="12">12 kg</option>
-        </select>
+      <p id="upP" style="opacity:.85;margin:0 0 14px"></p>
+      <div id="upPrices" style="text-align:start;font-size:.92rem;line-height:2;background:#131008;border:1px solid rgba(201,162,39,.35);border-radius:12px;padding:14px 16px;margin-bottom:18px"></div>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:14px">
+        <button id="upB1" type="button" class="btn btn-sm">🥇 Aziza 1ère qualité</button>
+        <button id="upB2" type="button" class="btn btn-outline btn-sm">✨ Aziza 2ème qualité premium</button>
       </div>
-      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-        <button id="upB1" class="btn btn-sm" onclick="quickAziza(1)">Aziza 1ère qualité</button>
-        <button id="upB2" class="btn btn-outline btn-sm" onclick="quickAziza(2)">Aziza 2ème qualité</button>
+      <div style="margin-bottom:16px">
+        <select id="upQty" style="padding:10px 18px;border-radius:10px;background:#0d0a07;color:#e8d9b0;border:1px solid #c9a227;font-size:1rem"></select>
       </div>
+      <button id="upGo" type="button" class="btn" style="width:100%">✅ Ajouter à ma commande — Paiement à la livraison</button>
           </div>
     <div id="recapZone" hidden style="margin-top:24px;text-align:left;background:#131008;border:1px solid rgba(201,162,39,.4);border-radius:14px;padding:20px 22px">
         <h3 style="color:#d4af37;margin:0 0 14px;font-size:1.15rem;text-align:center" data-i18n="recap_t">📋 Récapitulatif de vos réservations</h3>
@@ -491,7 +492,7 @@ fbq('track', 'PageView');
 <script>
 const T = {
 fr:{
-  recap_t:"📋 Récapitulatif de vos réservations",recap_note:"Paiement à la livraison — on vous appellera pour tout confirmer. Majhoul/Assiane : livraison dès maintenant. Aziza : dès la récolte fin septembre.",recap_total:"Total : {total} DH — livraison gratuite",up_harvest:"livraison sous 24-48h",
+  recap_t:"📋 Récapitulatif de vos réservations",recap_note:"Paiement à la livraison — on vous appellera pour tout confirmer. Majhoul/Assiane : livraison dès maintenant. Aziza : dès la récolte fin septembre.",recap_total:"Total : {total} DH — livraison gratuite",up_harvest:"livraison sous 24-48h",up_t:"🌴 Ajoutez Aziza à votre commande",up_p:"Paiement à la livraison — on regroupe tout dans le même colis, sans frais supplémentaires.",up_pr:'<b style="color:#E7C55B">🥇 Aziza 1ère qualité :</b> 1 kg — 300 DH • 2 kg — 500 DH • 3 kg — 690 DH • 6 kg — 1350 DH • 10 kg — 2100 DH<br><b style="color:#E7C55B">✨ Aziza 2ème qualité premium :</b> 1.5 kg — 315 DH • 3 kg — 540 DH • 6 kg — 1020 DH • 9 kg — 1440 DH • 12 kg — 1800 DH • 15 kg — 2250 DH • 18 kg — 2700 DH',up_b1:"🥇 Aziza 1ère qualité",up_b2:"✨ Aziza 2ème premium",up_go:"✅ Ajouter à ma commande — Paiement à la livraison",
   topbar:"🚚 Livraison gratuite dès 3 kg — Paiement à la livraison",
   nav_figuig:"Figuig",nav_products:"Nos dattes",nav_why:"Pourquoi Aziza ?",nav_order:"Réserver Aziza",
   hero_badge:"✦ Directement des oasis de Figuig",
@@ -586,7 +587,7 @@ fr:{
   th_msg_other:"Votre commande est enregistrée. Notre équipe vous contactera sous 24h pour confirmer la livraison. Paiement à la livraison — livraison gratuite dès 3 kg. 🌴"
 },
 ar:{
-  recap_t:"📋 ملخص حجوزاتك",recap_note:"الدفع عند الاستلام — سنتصل بك لتأكيد كل شيء. مجهول/العصيان: التوصيل من الآن. أزيزا: بعد الحصاد آخر شتنبر.",recap_total:"المجموع : {total} درهم — التوصيل مجاني",up_harvest:"التوصيل بعد حصاد أزيزا، آخر شتنبر",
+  recap_t:"📋 ملخص حجوزاتك",recap_note:"الدفع عند الاستلام — سنتصل بك لتأكيد كل شيء. مجهول/العصيان: التوصيل من الآن. أزيزا: بعد الحصاد آخر شتنبر.",recap_total:"المجموع : {total} درهم — التوصيل مجاني",up_harvest:"التوصيل بعد حصاد أزيزا، آخر شتنبر",up_t:"🌴 زيد أزيزا مع الطلب ديالك",up_p:"الدفع عند الاستلام — غادي نجمعو كلشي فنفس الطلبية، بلا مصاريف زايدة.",up_pr:'<b style="color:#E7C55B">🥇 أزيزا الجودة الأولى:</b> 1 كغ — 300 درهم • 2 كغ — 500 درهم • 3 كغ — 690 درهم • 6 كغ — 1350 درهم • 10 كغ — 2100 درهم<br><b style="color:#E7C55B">✨ أزيزا الجودة الثانية بريميوم:</b> 1.5 كغ — 315 درهم • 3 كغ — 540 درهم • 6 كغ — 1020 درهم • 9 كغ — 1440 درهم • 12 كغ — 1800 درهم • 15 كغ — 2250 درهم • 18 كغ — 2700 درهم',up_b1:"🥇 أزيزا الجودة الأولى",up_b2:"✨ أزيزا الثانية بريميوم",up_go:"✅ زيدها مع الطلب — الدفع عند الاستلام",
   topbar:"🚚 التوصيل مجاني ابتداءً من 2 كغ — الدفع عند الاستلام",
   nav_figuig:"فيجيج",nav_products:"تمورنا",nav_why:"لماذا أزيزا؟",nav_order:"احجز أزيزا",
   hero_badge:"✦ من واحات فيجيج مباشرة",
@@ -681,7 +682,7 @@ ar:{
   th_msg_other:"تم تسجيل طلبك. سيتصل بك فريقنا خلال 24 ساعة لتأكيد التوصيل. الدفع عند الاستلام — التوصيل مجاني من 3 كغ. 🌴"
 },
 en:{
-  recap_t:"📋 Your reservation summary",recap_note:"Cash on delivery — we will call you to confirm everything. Majhoul/Assiane: delivery now. Aziza: after the harvest, late September.",recap_total:"Total: {total} MAD — free delivery",up_harvest:"delivery after the Aziza harvest, late September",
+  recap_t:"📋 Your reservation summary",recap_note:"Cash on delivery — we will call you to confirm everything. Majhoul/Assiane: delivery now. Aziza: after the harvest, late September.",recap_total:"Total: {total} MAD — free delivery",up_harvest:"delivery after the Aziza harvest, late September",up_t:"🌴 Add Aziza to your order",up_p:"Cash on delivery — we pack everything in the same parcel, no extra fees.",up_pr:'<b style="color:#E7C55B">🥇 Aziza 1st quality:</b> 1 kg — 300 MAD • 2 kg — 500 MAD • 3 kg — 690 MAD • 6 kg — 1350 MAD • 10 kg — 2100 MAD<br><b style="color:#E7C55B">✨ Aziza 2nd premium quality:</b> 1.5 kg — 315 MAD • 3 kg — 540 MAD • 6 kg — 1020 MAD • 9 kg — 1440 MAD • 12 kg — 1800 MAD • 15 kg — 2250 MAD • 18 kg — 2700 MAD',up_b1:"🥇 Aziza 1st quality",up_b2:"✨ Aziza 2nd premium",up_go:"✅ Add to my order — Cash on delivery",
   topbar:"🚚 Free delivery from 3 kg — Cash on delivery",
   nav_figuig:"Figuig",nav_products:"Our dates",nav_why:"Why Aziza?",nav_order:"Reserve Aziza",
   hero_badge:"✦ Straight from the Figuig oases",
@@ -776,7 +777,7 @@ en:{
   th_msg_other:"Your order has been placed. Our team will contact you within 24h to confirm delivery. Cash on delivery — free shipping from 3 kg. 🌴"
 },
 es:{
-  recap_t:"📋 Resumen de tus reservas",recap_note:"Pago contra entrega — te llamaremos para confirmar todo. Majhoul/Assiane: entrega desde ahora. Aziza: tras la cosecha, finales de septiembre.",recap_total:"Total: {total} MAD — entrega gratuita",up_harvest:"entrega tras la cosecha de Aziza, finales de septiembre",
+  recap_t:"📋 Resumen de tus reservas",recap_note:"Pago contra entrega — te llamaremos para confirmar todo. Majhoul/Assiane: entrega desde ahora. Aziza: tras la cosecha, finales de septiembre.",recap_total:"Total: {total} MAD — entrega gratuita",up_harvest:"entrega tras la cosecha de Aziza, finales de septiembre",up_t:"🌴 Añade Aziza a tu pedido",up_p:"Pago contra entrega — lo enviamos todo en el mismo paquete, sin costes extra.",up_pr:'<b style="color:#E7C55B">🥇 Aziza 1ª calidad:</b> 1 kg — 300 MAD • 2 kg — 500 MAD • 3 kg — 690 MAD • 6 kg — 1350 MAD • 10 kg — 2100 MAD<br><b style="color:#E7C55B">✨ Aziza 2ª calidad premium:</b> 1.5 kg — 315 MAD • 3 kg — 540 MAD • 6 kg — 1020 MAD • 9 kg — 1440 MAD • 12 kg — 1800 MAD • 15 kg — 2250 MAD • 18 kg — 2700 MAD',up_b1:"🥇 Aziza 1ª calidad",up_b2:"✨ Aziza 2ª premium",up_go:"✅ Añadir a mi pedido — Pago contra entrega",
   topbar:"🚚 Entrega gratis desde 3 kg — Pago contra entrega",
   nav_figuig:"Figuig",nav_products:"Nuestros dátiles",nav_why:"¿Por qué Aziza?",nav_order:"Reservar Aziza",
   hero_badge:"✦ Directamente de los oasis de Figuig",
@@ -905,32 +906,40 @@ if(prod&&phoneClean&&purchaseValue>0){
     try{localStorage.setItem(phKey,String(Date.now()));}catch(err){}
   }
 }
+let upTier=1;
 if(!isAz&&phoneClean){
   document.getElementById('upsellZone').hidden=false;
-  document.getElementById('upT').textContent=L.up_t||'';
-  document.getElementById('upP').textContent=L.up_p||'';
-  document.getElementById('upB1').textContent=L.up_b1||'Aziza 1ère qualité';
-  document.getElementById('upB2').textContent=L.up_b2||'Aziza 2ème qualité';
+  document.getElementById('upT').textContent=L.up_t||'🌴 Ajoutez Aziza à votre commande';
+  document.getElementById('upP').textContent=L.up_p||'Paiement à la livraison — on regroupe tout dans le même colis.';
+  document.getElementById('upPrices').innerHTML=L.up_pr||'';
+  document.getElementById('upB1').textContent=L.up_b1||'🥇 Aziza 1ère qualité';
+  document.getElementById('upB2').textContent=L.up_b2||'✨ Aziza 2ème qualité premium';
+  document.getElementById('upGo').textContent=L.up_go||'✅ Ajouter à ma commande — Paiement à la livraison';
+  updateUpsellQty(1);
 }
 function updateUpsellQty(tier){
+  upTier=tier;
   const sel=document.getElementById('upQty');
-  const opts1=[{v:3,t:'3 kg — 690 DH'},{v:6,t:'6 kg — 1350 DH'},{v:10,t:'10 kg — 2100 DH'}];
-  const opts2=[{v:3,t:'3 kg — 450 DH'},{v:6,t:'6 kg — 900 DH'},{v:9,t:'9 kg — 1260 DH'},{v:12,t:'12 kg — 1680 DH'}];
+  const opts1=[{v:'1',t:'1 kg — 300 DH (livraison incluse)'},{v:'2',t:'2 kg — 500 DH | Livraison offerte'},{v:'3',t:'3 kg — 690 DH | Livraison offerte'},{v:'6',t:'6 kg — 1350 DH | Livraison offerte'},{v:'10',t:'10 kg — 2100 DH | Livraison offerte'}];
+  const opts2=[{v:'1.5',t:'1.5 kg — 315 DH (livraison incluse)'},{v:'3',t:'3 kg — 540 DH | Livraison offerte'},{v:'6',t:'6 kg — 1020 DH | Livraison offerte'},{v:'9',t:'9 kg — 1440 DH | Livraison offerte'},{v:'12',t:'12 kg — 1800 DH | Livraison offerte'},{v:'15',t:'15 kg — 2250 DH | Livraison offerte'},{v:'18',t:'18 kg — 2700 DH | Livraison offerte'}];
   const opts=tier===1?opts1:opts2;
   sel.innerHTML=opts.map(o=>'<option value="'+o.v+'">'+o.t+'</option>').join('');
+  const b1=document.getElementById('upB1'),b2=document.getElementById('upB2');
+  if(b1&&b2){b1.style.opacity=tier===1?'1':'.55';b2.style.opacity=tier===2?'1':'.55';}
 }
 document.getElementById('upB1').addEventListener('click',function(){updateUpsellQty(1);});
 document.getElementById('upB2').addEventListener('click',function(){updateUpsellQty(2);});
+document.getElementById('upGo').addEventListener('click',function(){quickAziza(upTier);});
 function quickAziza(tier){
   if(window.__upsellSent){return;}
   const name=q.get('n')||'',phone=q.get('ph')||'',city=q.get('c')||'';
   const phoneClean=phone.replace(/\D/g,'');
-  const qty=parseInt(document.getElementById('upQty').value,10);
-  const totals1={3:690,6:1350,10:2100};
-  const totals2={3:450,6:900,9:1260,12:1680};
+  const qty=document.getElementById('upQty').value;
+  const totals1={'1':300,'2':500,'3':690,'6':1350,'10':2100};
+  const totals2={'1.5':315,'3':540,'6':1020,'9':1440,'12':1800,'15':2250,'18':2700};
   const totals=tier===1?totals1:totals2;
   const total=totals[qty]||0;
-  const prodName=tier===1?'Aziza 1ère qualité':'Aziza 2ème qualité';
+  const prodName=tier===1?'Aziza 1ère qualité':'Aziza 2ème qualité premium';
   if(!name||!phoneClean||!city||!total){alert('Informations de commande incomplètes.');return;}
   const storageKey='tiyni_upsell-'+phoneClean+'-'+qty;
   let lastUpsell=null;
@@ -955,7 +964,7 @@ function quickAziza(tier){
   try{localStorage.setItem(storageKey,String(Date.now()));}catch(err){}
   try{document.body.appendChild(f);f.submit();}catch(err){window.__upsellSent=false;alert('Une erreur est survenue. Veuillez réessayer.');return;}
   const upEventId='purchase_upsell_'+phoneClean+'_'+Date.now();
-  try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName,content_id:tier===1?'aziza-001':'aziza-002',phone:phoneClean},{eventID:upEventId});}catch(err){}
+  try{fbq('track','Purchase',{value:total,currency:'MAD',content_name:prodName,content_id:tier===1?'aziza-001':'aziza2eme-001',phone:phoneClean},{eventID:upEventId});}catch(err){}
   try{ttq.track('SubmitForm',{value:total,currency:'MAD',content_name:prodName,content_id:'aziza-001'});}catch(err){}
   try{ttq.track('Purchase',{value:total,currency:'MAD',content_name:prodName,content_id:'aziza-001'});}catch(err){}
   document.getElementById('upsellZone').hidden=true;

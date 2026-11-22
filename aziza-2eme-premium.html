@@ -1096,7 +1096,7 @@ document.getElementById('orderForm').addEventListener('submit',e=>{
   else if(ref.indexOf('google.')>-1)srcVal='Google';
   else if(ref.indexOf('whatsapp')>-1)srcVal='WhatsApp';
   const usp=new URLSearchParams(window.location.search);
-  if(usp.get('utm_source'))srcVal=usp.get('utm_source');
+  if(usp.get('utm_source')){srcVal=usp.get('utm_source');const _sm={'fb':'Facebook','ig':'Instagram','msg':'Meta','an':'Meta'};const _k=srcVal.toLowerCase();if(_sm[_k])srcVal=_sm[_k];}
   params.set('src',srcVal);
   const srcInput=document.createElement('input');srcInput.type='hidden';srcInput.name='source';srcInput.value=srcVal;f.appendChild(srcInput);
   const now=new Date();
